@@ -31,11 +31,11 @@
 
     /* CTA shape — pill / outline / sharp */
     --cta-radius:        9999px;
-    --cta-bg:            var(--accent);
-    --cta-color:         var(--accent-ink);
+    --cta-bg:            transparent;
+    --cta-color:         var(--accent);
     --cta-border:        var(--accent);
     --cta-border-width:  2px;
-    --cta-padding:       14px 28px;
+    --cta-padding:       13px 26px;
     --cta-shadow:        none;
   }
 
@@ -1163,107 +1163,6 @@
   </div>
 </section>
 
-<!-- ─── Tweaks panel ──────────────────────────────────────────── -->
-<div id="tweaks-root"></div>
-
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel">
-  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "accent": "amber",
-    "ctaStyle": "outline"
-  }/*EDITMODE-END*/;
-
-  // Accent palettes  — first color is hero in the swatch picker, rest stack
-  const ACCENT_VALUES = {
-    amber: { name: "Amber",     accent: "#eab308", hover: "#facc15", ink: "#0f172a" },
-    olive: { name: "Olive",     accent: "#b5c468", hover: "#cdd886", ink: "#0f172a" },
-    coral: { name: "Coral",     accent: "#ee6b3a", hover: "#f78a5e", ink: "#0f172a" },
-  };
-  const ACCENT_PALETTES = {
-    amber: ["#eab308", "#facc15", "#0f172a"],
-    olive: ["#b5c468", "#cdd886", "#0f172a"],
-    coral: ["#ee6b3a", "#f78a5e", "#0f172a"],
-  };
-
-  const CTA_VARIANTS = {
-    pill:    { radius: "9999px", padding: "14px 28px", bw: "2px", bg: "var(--accent)",    color: "var(--accent-ink)", border: "var(--accent)", shadow: "none" },
-    outline: { radius: "9999px", padding: "13px 26px", bw: "2px", bg: "transparent",      color: "var(--accent)",     border: "var(--accent)", shadow: "none" },
-    sharp:   { radius: "0",      padding: "16px 28px", bw: "0",   bg: "var(--accent)",    color: "var(--accent-ink)", border: "var(--accent)", shadow: "4px 4px 0 rgba(15,23,42,1)" },
-  };
-
-  function applyAccent(key) {
-    const v = ACCENT_VALUES[key] || ACCENT_VALUES.amber;
-    const r = document.documentElement.style;
-    r.setProperty("--accent", v.accent);
-    r.setProperty("--accent-hover", v.hover);
-    r.setProperty("--accent-ink", v.ink);
-  }
-  function applyCta(key) {
-    const v = CTA_VARIANTS[key] || CTA_VARIANTS.pill;
-    const r = document.documentElement.style;
-    r.setProperty("--cta-radius", v.radius);
-    r.setProperty("--cta-padding", v.padding);
-    r.setProperty("--cta-border-width", v.bw);
-    r.setProperty("--cta-bg", v.bg);
-    r.setProperty("--cta-color", v.color);
-    r.setProperty("--cta-border", v.border);
-    r.setProperty("--cta-shadow", v.shadow);
-  }
-
-  function App() {
-    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-    React.useEffect(() => { applyAccent(t.accent); }, [t.accent]);
-    React.useEffect(() => { applyCta(t.ctaStyle); }, [t.ctaStyle]);
-
-    return (
-      <TweaksPanel title="Tweaks">
-        <TweakSection label="Accent colour" />
-        <TweakColor
-          label="Accent palette"
-          value={ACCENT_PALETTES[t.accent]}
-          options={Object.values(ACCENT_PALETTES)}
-          onChange={(palette) => {
-            const key = Object.keys(ACCENT_PALETTES).find(
-              (k) => ACCENT_PALETTES[k].join() === palette.join()
-            ) || "amber";
-            setTweak("accent", key);
-          }}
-        />
-        <TweakRadio
-          label="Variant"
-          value={t.accent}
-          options={[
-            { value: "amber", label: "Amber" },
-            { value: "olive", label: "Olive" },
-            { value: "coral", label: "Coral" },
-          ]}
-          onChange={(v) => setTweak("accent", v)}
-        />
-
-        <TweakSection label="Booking CTA" />
-        <TweakRadio
-          label="Style"
-          value={t.ctaStyle}
-          options={[
-            { value: "pill",    label: "Pill" },
-            { value: "outline", label: "Outline" },
-            { value: "sharp",   label: "Sharp" },
-          ]}
-          onChange={(v) => setTweak("ctaStyle", v)}
-        />
-      </TweaksPanel>
-    );
-  }
-
-  // Apply defaults immediately so first paint matches stored state.
-  applyAccent(TWEAK_DEFAULTS.accent);
-  applyCta(TWEAK_DEFAULTS.ctaStyle);
-
-  ReactDOM.createRoot(document.getElementById("tweaks-root")).render(<App />);
-</script>
 
 </body>
 </html>
