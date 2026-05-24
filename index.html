@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elemental Surf Lodge · Official Accommodation Partner · UK Surf & Skate Expo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" />
+
+<style>
+  /* ─── Tokens ─────────────────────────────────────────────────────── */
+  :root {
+    --navy:        #0f172a;
+    --navy-2:      #1e293b;
+    --navy-3:      #111a2e;
+    --amber:       #eab308;
+    --yellow:      #facc15;
+    --olive:       #b5c468;
+    --coral:       #ee6b3a;   /* co-brand */
+    --warm-grey:   #f4f3f1;
+    --charcoal:    #353b40;
+    --white:       #ffffff;
+    --border:      rgba(15,23,42,0.08);
+    --border-dark: rgba(255,255,255,0.10);
+
+    /* Tweakable */
+    --accent:       var(--amber);
+    --accent-hover: var(--yellow);
+    --accent-ink:   var(--navy);
+
+    /* CTA shape — pill / outline / sharp */
+    --cta-radius:        9999px;
+    --cta-bg:            var(--accent);
+    --cta-color:         var(--accent-ink);
+    --cta-border:        var(--accent);
+    --cta-border-width:  2px;
+    --cta-padding:       14px 28px;
+    --cta-shadow:        none;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--charcoal);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── Type system ────────────────────────────────────────────────── */
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .eyebrow.on-light { color: var(--charcoal); }
+  .eyebrow .dot { display:inline-block; width:5px; height:5px; border-radius:50%;
+    background: var(--accent); vertical-align: middle; margin: 0 10px 2px; }
+
+  h1, h2, h3 { font-weight: 900; letter-spacing: -0.01em; line-height: 1.05; margin: 0; }
+  h1 { font-size: clamp(40px, 6.4vw, 88px); text-transform: uppercase; }
+  h2 { font-size: clamp(30px, 4.2vw, 56px); text-transform: uppercase; }
+  h3 { font-size: 22px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+  p  { margin: 0 0 1.1em; }
+  .lede { font-size: 18px; line-height: 1.65; max-width: 60ch; }
+
+  /* ─── Layout ─────────────────────────────────────────────────────── */
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 96px 0; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+  .section-head .title-stack { max-width: 720px; }
+  .section-head h2 { margin-top: 14px; }
+  .section-head .meta {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--charcoal); opacity: 0.55; white-space: nowrap;
+  }
+
+  /* ─── Buttons ────────────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: inherit; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: var(--cta-padding);
+    border-radius: var(--cta-radius);
+    background: var(--cta-bg);
+    color: var(--cta-color);
+    border: var(--cta-border-width) solid var(--cta-border);
+    box-shadow: var(--cta-shadow);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn .arrow { display:inline-block; transition: transform 0.2s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  .btn--ghost {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.45);
+  }
+  .btn--ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--white); color: var(--white); }
+  .on-light .btn--ghost { color: var(--charcoal); border-color: rgba(15,23,42,0.25); }
+  .on-light .btn--ghost:hover { background: rgba(15,23,42,0.04); border-color: var(--navy); color: var(--navy); }
+
+  /* ─── Utility bar ────────────────────────────────────────────────── */
+  .utility {
+    background: var(--navy);
+    color: rgba(255,255,255,0.78);
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 10.5px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .utility .wrap { display: flex; align-items: center; justify-content: space-between;
+    padding-top: 10px; padding-bottom: 10px; gap: 24px; flex-wrap: wrap; }
+  .utility .partner-mark { color: var(--accent); }
+  .utility .pipes { color: rgba(255,255,255,0.25); margin: 0 12px; }
+
+  /* ─── Header / nav ───────────────────────────────────────────────── */
+  header.nav {
+    background: var(--navy);
+    color: var(--white);
+    position: sticky; top: 0; z-index: 50;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  header.nav .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 18px; padding-bottom: 18px; gap: 24px;
+  }
+  .logo {
+    color: var(--accent);
+    font-weight: 900; font-size: 18px; line-height: 0.95;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .logo small {
+    display: block;
+    color: rgba(255,255,255,0.45);
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.28em; margin-top: 4px;
+  }
+  nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+  nav a {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.78);
+    transition: color 0.15s ease;
+  }
+  nav a:hover { color: var(--accent); }
+  nav a.current { color: var(--white); }
+  nav a.current::after {
+    content: ""; display: block; height: 2px; width: 24px;
+    background: var(--accent); margin-top: 6px;
+  }
+
+  /* ─── Hero ───────────────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    background: var(--navy);
+    color: var(--white);
+    padding: 96px 0 0;
+    overflow: hidden;
+  }
+  .hero .wrap { position: relative; z-index: 2; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 64px;
+    align-items: end;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero h1 .line { display: block; }
+  .hero .sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.78);
+    max-width: 52ch; margin: 28px 0 36px; font-weight: 300; }
+  .hero .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 64px; }
+  .hero-art {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 14px;
+    background:
+      repeating-linear-gradient(135deg,
+        rgba(255,255,255,0.05) 0 24px,
+        rgba(255,255,255,0.02) 24px 48px),
+      linear-gradient(180deg, #1e293b 0%, #0b1224 100%);
+    border: 0.5px solid var(--border-dark);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  }
+  .hero-photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    z-index: 0;
+  }
+  .hero-art > *:not(.hero-photo) { z-index: 2; }
+  .hero-art .corner-tag {
+    position: absolute; top: 18px; left: 18px;
+    background: var(--accent); color: var(--navy);
+    padding: 8px 12px; font-size: 10px; font-weight: 800;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .anniversary-stamp {
+    position: absolute;
+    top: -28px; right: -28px;
+    width: 150px; height: 150px;
+    background: var(--warm-grey);
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    transform: rotate(-9deg);
+    z-index: 3;
+  }
+  .anniversary-stamp img { width: 100%; height: 100%; display: block; }
+  .hero-art .placeholder-meta {
+    position: absolute; bottom: 18px; left: 18px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.04em;
+  }
+  .hero-art .event-card {
+    position: absolute; right: 18px; bottom: 18px;
+    background: rgba(15,23,42,0.85);
+    backdrop-filter: blur(12px);
+    border: 0.5px solid var(--border-dark);
+    border-left: 3px solid var(--accent);
+    padding: 16px 18px;
+    width: 200px;
+  }
+  .event-card .e-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+  }
+  .event-card .e-dates {
+    font-size: 22px; font-weight: 900; line-height: 1.05; margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .event-card .e-month { color: rgba(255,255,255,0.65); }
+  .event-card .e-loc {
+    font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.7);
+    letter-spacing: 0.04em; margin-top: 8px;
+  }
+
+  .hero-marquee {
+    margin-top: 8px;
+    border-top: 1px solid var(--border-dark);
+    border-bottom: 4px solid var(--accent);
+    background: var(--navy-3);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .hero-marquee .track {
+    display: inline-flex; gap: 56px;
+    padding: 22px 0;
+    animation: marquee 38s linear infinite;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .hero-marquee .track span { display: inline-flex; align-items: center; gap: 56px; }
+  .hero-marquee .track i {
+    display: inline-block; width: 8px; height: 8px;
+    background: var(--accent); border-radius: 50%; font-style: normal;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ─── Partnership statement ─────────────────────────────────────── */
+  .partnership {
+    background: var(--warm-grey);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 0;
+  }
+  .partnership .wrap { display: grid; grid-template-columns: auto 1fr auto;
+    align-items: center; gap: 48px; }
+  .pship-mark {
+    font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em;
+    line-height: 1.05; font-size: 18px;
+  }
+  .pship-mark.lodge { color: var(--navy); }
+  .pship-mark.expo  { color: var(--charcoal); }
+  .pship-logo { display: block; width: 200px; height: auto; }
+  .pship-mark.expo .label-stack { line-height: 1.05; }
+  .pship-mark small { display:block; font-size: 9px; font-weight: 600;
+    letter-spacing: 0.22em; opacity: 0.55; margin-top: 4px; }
+  .pship-x {
+    width: 28px; height: 28px; flex-shrink:0;
+    color: var(--accent);
+    font-weight: 900; font-size: 24px; text-align: center; line-height: 28px;
+  }
+  .pship-line {
+    display: flex; align-items: center; gap: 18px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+  .pship-line .label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .pship-line .desc {
+    font-size: 13px; font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  /* ─── About the Expo ─────────────────────────────────────────────── */
+  .expo {
+    background: var(--white);
+  }
+  .expo-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; margin-bottom: 72px; }
+  .expo-intro p { font-size: 18px; line-height: 1.65; }
+  .expo-intro p + p { font-size: 15px; line-height: 1.7; color: rgba(53,59,64,0.78); }
+
+  .expo-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .e-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+  .e-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .e-card .ix {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; color: var(--accent);
+  }
+  .e-card h3 { color: var(--navy); font-size: 24px; }
+  .e-card p { font-size: 14px; line-height: 1.65; margin: 0; color: rgba(53,59,64,0.85); }
+  .e-card ul {
+    list-style: none; padding: 0; margin: 6px 0 0;
+    border-top: 1px solid var(--border); padding-top: 16px;
+  }
+  .e-card li {
+    font-size: 12px; font-weight: 500; padding: 6px 0;
+    display: flex; justify-content: space-between; gap: 12px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .e-card li:last-child { border-bottom: none; }
+  .e-card li span:last-child { color: var(--accent); font-weight: 700;
+    letter-spacing: 0.04em; font-size: 11px; text-transform: uppercase; white-space:nowrap; }
+
+  /* ─── Fact strip ─────────────────────────────────────────────────── */
+  .facts {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border);
+  }
+  .facts div {
+    padding: 28px 24px;
+    border-right: 1px solid var(--border);
+  }
+  .facts div:last-child { border-right: none; }
+  .facts .k {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .facts .v {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; font-weight: 900; color: var(--navy);
+    line-height: 1.05; letter-spacing: -0.01em;
+  }
+  .facts .u {
+    font-size: 12px; color: rgba(53,59,64,0.65); margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ─── Why stay (values) ──────────────────────────────────────────── */
+  .why {
+    background: var(--navy);
+    color: var(--white);
+    border-top: 4px solid var(--accent);
+  }
+  .why .section-head h2 { color: var(--white); }
+  .why .section-head p { color: rgba(255,255,255,0.7); max-width: 56ch; font-size: 16px; }
+  .why .meta { color: rgba(255,255,255,0.4); }
+
+  .values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-dark);
+    border: 1px solid var(--border-dark);
+  }
+  .value {
+    background: var(--navy);
+    padding: 40px 32px;
+    display: flex; flex-direction: column; gap: 14px;
+    min-height: 260px;
+    transition: background 0.18s ease;
+  }
+  .value:hover { background: var(--navy-2); }
+  .value .num {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .value h3 { color: var(--white); font-size: 22px; max-width: 18ch; }
+  .value p { color: rgba(255,255,255,0.7); font-size: 14px;
+    line-height: 1.65; margin: auto 0 0; font-weight: 300; }
+
+  /* ─── Distance / transport ───────────────────────────────────────── */
+  .transport {
+    background: var(--warm-grey);
+  }
+  .transport-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    align-items: stretch;
+  }
+  .map-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3.4;
+    overflow: hidden;
+  }
+  .map-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 28% 62%, rgba(181,196,104,0.18) 0 18%, transparent 19%),
+      radial-gradient(circle at 70% 30%, rgba(234,179,8,0.10) 0 22%, transparent 23%),
+      repeating-linear-gradient(45deg,
+        rgba(15,23,42,0.04) 0 1px, transparent 1px 18px),
+      repeating-linear-gradient(-45deg,
+        rgba(15,23,42,0.04) 0 1px, transparent 1px 18px);
+  }
+  .coast {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(181,196,104,0.0) 60%, rgba(15,23,42,0.05) 100%);
+  }
+  .map-pin {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.08);
+    white-space: nowrap;
+  }
+  .map-pin::after {
+    content: ""; position: absolute; left: 50%; bottom: -6px;
+    width: 10px; height: 10px; transform: translateX(-50%) rotate(45deg);
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .map-pin .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .map-pin.lodge { font-weight: 900; }
+  .map-pin.lodge .dot { background: var(--navy); width: 10px; height: 10px; }
+  .map-pin.lodge::before {
+    content: ""; position: absolute; left: 50%; top: 100%; transform: translate(-50%, 4px);
+    width: 28px; height: 28px; border: 2px solid var(--navy); border-radius: 50%; opacity: 0.18;
+  }
+  .map-label {
+    position: absolute;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px; letter-spacing: 0.06em;
+    color: rgba(15,23,42,0.4);
+    text-transform: uppercase;
+  }
+
+  .transport-list { display: flex; flex-direction: column; }
+  .t-item {
+    display: grid;
+    grid-template-columns: 30px 1fr auto auto;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .t-item:first-child { padding-top: 0; }
+  .t-item:last-child { border-bottom: none; }
+  .t-item .mode {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px; font-weight: 700; color: var(--accent);
+  }
+  .t-item .name {
+    font-size: 16px; font-weight: 600;
+    color: var(--navy); letter-spacing: -0.005em;
+  }
+  .t-item .name small {
+    display: block;
+    font-size: 12px; font-weight: 400;
+    color: rgba(53,59,64,0.6); margin-top: 2px;
+  }
+  .t-item .time {
+    font-size: 14px; font-weight: 700; color: var(--charcoal);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .t-item .time small {
+    display:block; font-size: 10px; font-weight: 500;
+    color: rgba(53,59,64,0.55); margin-top: 2px; letter-spacing: 0.18em;
+  }
+  .t-item .star {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); opacity: 0;
+  }
+  .t-item.is-venue .star { opacity: 1; }
+  .t-item.is-venue .name { color: var(--navy); }
+
+  .transport-extras {
+    margin-top: 28px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 24px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .transport-extras .label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .transport-extras ul {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px;
+  }
+  .transport-extras li {
+    font-size: 13px; font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 4px 0;
+  }
+  .transport-extras li::before {
+    content: ""; display: inline-block;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0; margin-top: 8px;
+  }
+
+  /* ─── Photo strips ───────────────────────────────────────────────── */
+  .photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    background: var(--navy);
+    border-top: 4px solid var(--accent);
+    border-bottom: 4px solid var(--accent);
+    padding: 6px;
+  }
+  .photo-strip .photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--navy-2);
+  }
+  .photo-strip .photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .photo-strip .photo:hover img { transform: scale(1.03); }
+  .photo-strip .caption {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    background: rgba(15,23,42,0.78);
+    color: var(--white);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 7px 11px;
+    border-left: 2px solid var(--accent);
+  }
+  .photo-strip .caption small {
+    display: block;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.18em;
+    opacity: 0.72;
+    margin-top: 3px;
+  }
+
+  /* ─── CTA band ───────────────────────────────────────────────────── */
+  .cta-band {
+    background: var(--navy-3);
+    color: var(--white);
+    border-top: 4px solid var(--accent);
+    border-bottom: 4px solid var(--accent);
+    padding: 80px 0;
+    text-align: center;
+  }
+  .cta-band .eyebrow { color: var(--accent); margin-bottom: 18px; }
+  .cta-band h2 { color: var(--white); max-width: 22ch; margin: 0 auto 20px; }
+  .cta-band h2 .accent { color: var(--accent); }
+  .cta-band .sub {
+    color: rgba(255,255,255,0.72);
+    font-size: 16px; max-width: 50ch; margin: 0 auto 36px;
+  }
+
+  /* ─── Booking form ───────────────────────────────────────────────── */
+  .booking {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .booking-cta {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px 0;
+  }
+  .booking-cta h2 { color: var(--navy); }
+  .booking-cta p {
+    font-size: 17px; line-height: 1.7;
+    color: rgba(53,59,64,0.85);
+    max-width: 52ch; margin-left: auto; margin-right: auto;
+  }
+  .booking-cta .btn { margin-top: 16px; }
+  .booking-cta .booking-fine {
+    margin-top: 28px;
+    font-size: 12px;
+    color: rgba(53,59,64,0.6);
+    letter-spacing: 0.02em;
+  }
+  .booking-cta .booking-fine a { color: var(--navy); border-bottom: 1px solid var(--accent); }
+  .booking-cta .booking-fine a:hover { color: var(--accent); }
+  .booking-copy h2 { color: var(--navy); }
+  .booking-copy p { font-size: 16px; line-height: 1.7; }
+  .booking-copy ul {
+    list-style: none; padding: 0; margin: 28px 0 0;
+    border-top: 1px solid var(--border);
+  }
+  .booking-copy li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    font-size: 13px; font-weight: 500;
+  }
+  .booking-copy li span:last-child { color: var(--accent); font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; font-size: 11px; }
+
+  .booking-form {
+    background: var(--warm-grey);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    padding: 36px;
+  }
+  .booking-form h3 {
+    color: var(--navy); margin-bottom: 24px;
+    font-size: 18px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 18px;
+  }
+  .field {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--charcoal); opacity: 0.7;
+  }
+  .field input, .field select {
+    appearance: none; -webkit-appearance: none;
+    font-family: inherit; font-size: 14px; font-weight: 500;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    border-radius: 4px;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%230f172a' d='M0 0h10L5 6z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .field input:focus, .field select:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(234,179,8,0.18);
+  }
+  .submit-row {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 18px; margin-top: 8px; flex-wrap: wrap;
+  }
+  .submit-row .fine {
+    font-size: 11px; font-weight: 500;
+    color: rgba(53,59,64,0.6); max-width: 36ch;
+  }
+
+  /* ─── Footer ─────────────────────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 72px 0 36px;
+    border-top: 4px solid var(--accent);
+  }
+  footer .wrap {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+  footer h4 {
+    color: var(--white);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    margin: 0 0 18px;
+  }
+  footer ul { list-style: none; margin:0; padding:0; }
+  footer li { padding: 4px 0; font-size: 13px; font-weight: 400; }
+  footer a:hover { color: var(--accent); }
+  footer .footer-brand .logo { font-size: 22px; }
+  footer .footer-brand p { font-size: 13px; max-width: 36ch; margin-top: 16px;
+    color: rgba(255,255,255,0.6); line-height: 1.7; }
+  footer .partner-callout {
+    margin-top: 20px;
+    border: 1px solid var(--border-dark);
+    border-left: 3px solid var(--accent);
+    padding: 14px 16px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .colophon {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--border-dark);
+    display: flex; justify-content: space-between;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ─── Responsive ─────────────────────────────────────────────────── */
+  @media (max-width: 980px) {
+    section { padding: 72px 0; }
+    .hero { padding-top: 56px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-art { aspect-ratio: 16/10; }
+    .expo-intro { grid-template-columns: 1fr; gap: 24px; }
+    .expo-cards { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .facts div { border-right: none; border-bottom: 1px solid var(--border); }
+    .facts div:nth-child(odd) { border-right: 1px solid var(--border); }
+    .values { grid-template-columns: 1fr; }
+    .transport-grid, .booking-grid { grid-template-columns: 1fr; gap: 36px; }
+    .partnership .wrap { grid-template-columns: 1fr; gap: 24px; text-align: left; }
+    .transport-extras ul { grid-template-columns: 1fr; }
+    .photo-strip { grid-template-columns: 1fr 1fr; }
+    .photo-strip .photo:nth-child(3) { display: none; }
+    footer .wrap { grid-template-columns: 1fr 1fr; }
+    nav ul { display: none; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+    .utility .wrap { font-size: 9.5px; }
+    .facts { grid-template-columns: 1fr; }
+    .facts div { border-right: none !important; }
+    footer .wrap { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── Hero ───────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Official Accommodation Partner <span class="dot"></span> UK Surf &amp; Skate Expo 2026</div>
+        <h1 style="margin-top:22px;">
+          <span class="line">Wake up</span>
+          <span class="line">where the</span>
+          <span class="line"><span class="accent">community</span></span>
+          <span class="line">rides.</span>
+        </h1>
+        <p class="sub">
+          For three days this July, Newquay becomes the home of UK surf and skate culture.
+          Elemental Surf Lodge becomes the only address that puts you a short walk from every
+          ramp, marquee, beach heat and evening session. We&rsquo;re honoured to be an official
+          accommodation partner for the 2026 Expo.
+        </p>
+        <div class="cta-row">
+          <a href="#book" class="btn">Book your Expo stay <span class="arrow">→</span></a>
+          <a href="#about-expo" class="btn btn--ghost">About the Expo</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Lodge guests walking to the water at Fistral Beach">
+        <img class="hero-photo" src="assets/lodge-fistral-2.jpeg" alt="Lodge guests walking to the water at Fistral Beach with their surfboards" />
+        <div class="anniversary-stamp" aria-label="20 years of Elemental UK, 2006 to 2026">
+          <img src="assets/20-years-stamp.png" alt="20 years of Elemental UK, 2006 to 2026" />
+        </div>
+        <div class="corner-tag">Partner &middot; 2026</div>
+        <div class="event-card">
+          <div class="e-label">UK Surf &amp; Skate Expo</div>
+          <div class="e-dates">24<span class="e-month">·</span>25<span class="e-month">·</span>26</div>
+          <div class="e-month" style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;">July 2026</div>
+          <div class="e-loc">Newquay Sports Centre &middot; TR7&nbsp;2SL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-marquee" aria-hidden="true">
+    <div class="track">
+      <span>Surf <i></i> Skate <i></i> Community <i></i> Cornwall <i></i> 2026 <i></i> Surf <i></i> Skate <i></i> Community <i></i> Cornwall <i></i> 2026 <i></i></span>
+      <span>Surf <i></i> Skate <i></i> Community <i></i> Cornwall <i></i> 2026 <i></i> Surf <i></i> Skate <i></i> Community <i></i> Cornwall <i></i> 2026 <i></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Partnership statement ─────────────────────────────────── -->
+<section class="partnership">
+  <div class="wrap">
+    <div class="pship-mark lodge">
+      <img src="assets/elemental-logo.png" alt="Elemental Surf Lodge" class="pship-logo" />
+    </div>
+    <div class="pship-line">
+      <span class="label">Official Partner</span>
+      <span class="desc">An accommodation partnership in support of the UK Surf &amp; Skate Expo 2026, from a lodge built for the same people the Expo is built for.</span>
+    </div>
+    <div class="pship-mark expo">
+      UK Surf &amp;<br>Skate Expo
+      <small>Newquay · 2026</small>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Photo strip · Expo ───────────────────────────────────────── -->
+<div class="photo-strip" aria-label="Scenes from the UK Surf &amp; Skate Expo">
+  <div class="photo">
+    <img src="assets/expo-skate-1.jpg" alt="Skater airborne at Concrete Waves during the UK Surf &amp; Skate Expo" />
+    <div class="caption">Concrete Waves<small>The Expo skate park</small></div>
+  </div>
+  <div class="photo">
+    <img src="assets/expo-surf-comp.jpg" alt="Surfer competing at Great Western Beach during the Expo" />
+    <div class="caption">Great Western<small>Expo surf comp</small></div>
+  </div>
+  <div class="photo">
+    <img src="assets/expo-skate-2.jpg" alt="Skater ollieing over an obstacle at Concrete Waves" />
+    <div class="caption">Concrete Waves<small>Best Trick</small></div>
+  </div>
+</div>
+
+<!-- ─── About the Expo ────────────────────────────────────────── -->
+<section class="expo" id="about-expo">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="title-stack">
+        <div class="eyebrow on-light">About the Expo <span class="dot"></span> What · When · Where</div>
+        <h2 style="color:var(--navy);">Three days, one town, every board on it.</h2>
+      </div>
+      <div class="meta">24 · 25 · 26 July 2026 / Newquay, TR7 2SL</div>
+    </div>
+
+    <div class="expo-intro">
+      <p class="lede" style="color:var(--navy);">
+        The UK Surf &amp; Skate Expo brings surf and skate cultures together for one
+        weekend in their spiritual home, the home of British surfing, Newquay.
+      </p>
+      <div>
+        <p>
+          Across three venues, a 7,000&thinsp;m&sup2; Expo Village with a purpose built skate
+          park, an 800 seat Expo Hall presented by YETI, and the town&rsquo;s beaches and bowls,
+          the weekend gathers the brands, athletes, filmmakers and riders who shape the
+          culture in the UK.
+        </p>
+        <p>
+          Free to wander, ticketed for the talks, films and awards. The expo runs Friday
+          through Sunday with the Wavelength UK Surfer Awards on Friday night and the
+          European Surf Film Festival on Saturday night.
+        </p>
+      </div>
+    </div>
+
+    <div class="expo-cards">
+      <div class="e-card">
+        <div class="ix">01 / Expo Village</div>
+        <h3>The Village</h3>
+        <p>A 7,000&thinsp;m&sup2; field of marquees, outdoor pitches, food and drink, a 40&prime; outdoor
+        film screen and a purpose built skate park. Free entry, all ages, all weekend.</p>
+        <ul>
+          <li><span>Entry</span><span>Free</span></li>
+          <li><span>Hours</span><span>9 AM to 4 PM</span></li>
+          <li><span>Skate</span><span>Onsite park</span></li>
+        </ul>
+      </div>
+      <div class="e-card">
+        <div class="e-card-corner"></div>
+        <div class="ix">02 / Expo Hall</div>
+        <h3>YETI Stage</h3>
+        <p>Three stages, 25+ talks, panels and fireside chats with the speakers, athletes and
+        filmmakers shaping surf and skate, plus the Wavelength UK Surfer Awards.</p>
+        <ul>
+          <li><span>Capacity</span><span>800 seats</span></li>
+          <li><span>Pass</span><span>From £19.98</span></li>
+          <li><span>Stages</span><span>Three</span></li>
+        </ul>
+      </div>
+      <div class="e-card">
+        <div class="ix">03 / After Dark</div>
+        <h3>Awards &amp; Films</h3>
+        <p>Friday: Wavelength UK Surfer Awards. The UK surf community&rsquo;s big night.
+        Saturday: European Surf Film Festival on the 40&prime; outdoor screen. Sunday: the surf
+        and skate competitions wrap.</p>
+        <ul>
+          <li><span>Fri</span><span>Surfer Awards</span></li>
+          <li><span>Sat</span><span>Film Festival</span></li>
+          <li><span>Sun</span><span>Finals</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div>
+        <div class="k">Dates</div>
+        <div class="v">24 to 26 Jul</div>
+        <div class="u">Friday through Sunday, 2026</div>
+      </div>
+      <div>
+        <div class="k">Venue</div>
+        <div class="v">Newquay</div>
+        <div class="u">Sports Centre · TR7&nbsp;2SL</div>
+      </div>
+      <div>
+        <div class="k">Expected</div>
+        <div class="v">15,000+</div>
+        <div class="u">Visitors across the weekend</div>
+      </div>
+      <div>
+        <div class="k">From the lodge</div>
+        <div class="v">12 min</div>
+        <div class="u">Walk to the Expo Village</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Why stay at the Lodge ─────────────────────────────────── -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="title-stack">
+        <div class="eyebrow">Why stay with us <span class="dot"></span> Values we share</div>
+        <h2>A lodge built for the people the Expo is built for.</h2>
+        <p style="margin-top:18px;">
+          The Expo brings surf and skate together for a weekend. We do it every week of the year.
+          Here&rsquo;s why our values line up, and why staying with us makes the whole weekend
+          easier, friendlier and a lot more fun.
+        </p>
+      </div>
+      <div class="meta">06 / Reasons</div>
+    </div>
+
+    <div class="values">
+      <div class="value">
+        <div class="num">01 / Community</div>
+        <h3>Housemates, not guests</h3>
+        <p>You&rsquo;ll be sharing breakfast with skaters, longboarders, foilers and first time riders
+        from across the UK and beyond. Conversations carry over from the Expo and into the lodge
+        kitchen.</p>
+      </div>
+      <div class="value">
+        <div class="num">02 / Built for boards</div>
+        <h3>Wax it, ride it, dry it</h3>
+        <p>Secure board storage, a proper wetsuit drying room and outdoor rinse showers. Bring
+        the surfboard, bring the skateboard, bring both. The lodge knows what to do with them.</p>
+      </div>
+      <div class="value">
+        <div class="num">03 / Location</div>
+        <h3>12 minutes from the Village</h3>
+        <p>A short walk to the Expo Village and Hall, five minutes to the train station, ten to
+        Towan Beach. You won&rsquo;t need a car all weekend.</p>
+      </div>
+      <div class="value">
+        <div class="num">04 / Daybreak</div>
+        <h3>Dawn patrol included</h3>
+        <p>The Expo opens at 9. Surf opens earlier. Coffee from 6, swell report on the wall,
+        a lodge surf coach on hand if you want company on the water before the day kicks off.</p>
+      </div>
+      <div class="value">
+        <div class="num">05 / Ethos</div>
+        <h3>Stoke for sustainability</h3>
+        <p>Rising Tide&rsquo;s sustainability values match ours. Reusable cups, refill stations,
+        a kitchen that buys local, a beach clean every Sunday morning of every season.</p>
+      </div>
+      <div class="value">
+        <div class="num">06 / Fuel</div>
+        <h3>Tea, toast, tide chart</h3>
+        <p>The basics, done well. Tea, coffee, toast, cereal and yogurt every morning.
+        Honest fuel before the Expo Village opens at 9. Tide times and swell report up
+        on the kitchen wall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Photo strip · Lodge ─────────────────────────────────────── -->
+<div class="photo-strip" aria-label="The lodge at Fistral Beach">
+  <div class="photo">
+    <img src="assets/lodge-fistral-1.jpeg" alt="Elemental Surf Lodge guests walking to the water at Fistral Beach" />
+    <div class="caption">Fistral Beach<small>Walk to the water</small></div>
+  </div>
+  <div class="photo">
+    <img src="assets/lodge-fistral-2.jpeg" alt="Guests paddling out at Fistral Beach" />
+    <div class="caption">Fistral Beach<small>Paddle out</small></div>
+  </div>
+  <div class="photo">
+    <img src="assets/lodge-fistral-3.jpeg" alt="Surfer airborne at Fistral Beach" />
+    <div class="caption">Fistral Beach<small>Air section</small></div>
+  </div>
+</div>
+
+<!-- ─── Distance / transport ──────────────────────────────────── -->
+<section class="transport">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="title-stack">
+        <div class="eyebrow on-light">Distance &amp; transport <span class="dot"></span> Around Newquay</div>
+        <h2 style="color:var(--navy);">A weekend you can walk.</h2>
+        <p style="color:var(--charcoal); max-width:54ch; margin-top:18px; font-size:16px;">
+          The lodge sits between the train station and the sea, with the Expo Village a short
+          walk one way and the beaches the other. No car, no taxis, no fuss.
+        </p>
+      </div>
+      <div class="meta">All distances from the lodge</div>
+    </div>
+
+    <div class="transport-grid">
+      <div class="map-card" aria-label="Map of Newquay showing the lodge and the Expo Village">
+        <div class="map-bg"></div>
+        <div class="coast"></div>
+
+        <span class="map-label" style="top:14px;left:18px;">[ Map placeholder · Newquay ]</span>
+        <span class="map-label" style="bottom:14px;right:18px;">N&nbsp;↑</span>
+
+        <span class="map-label" style="top:38%; left:8%;">Atlantic</span>
+        <span class="map-label" style="bottom:14%; right:12%;">A392</span>
+
+        <div class="map-pin lodge" style="top:52%; left:38%;">
+          <span class="dot"></span> Lodge
+        </div>
+        <div class="map-pin"       style="top:32%; left:62%;">
+          <span class="dot"></span> Expo Village
+        </div>
+        <div class="map-pin"       style="top:70%; left:24%;">
+          <span class="dot"></span> Towan Beach
+        </div>
+        <div class="map-pin"       style="top:80%; left:58%;">
+          <span class="dot"></span> Concrete Waves
+        </div>
+        <div class="map-pin"       style="top:48%; left:18%;">
+          <span class="dot"></span> Fistral
+        </div>
+      </div>
+
+      <div>
+        <div class="transport-list">
+          <div class="t-item is-venue">
+            <div class="star"></div>
+            <div class="name">UK Surf &amp; Skate Expo Village<small>Newquay Sports Centre · TR7&nbsp;2SL</small></div>
+            <div class="time">12 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">Concrete Waves Skatepark<small>Free skate park · Bowl, street, pool</small></div>
+            <div class="time">8 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">Towan Beach<small>Family friendly bay, lodge surf check</small></div>
+            <div class="time">6 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">Newquay Train Station<small>Direct trains from Par &amp; the mainline</small></div>
+            <div class="time">5 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">Fistral Beach<small>The big name break, world tour history</small></div>
+            <div class="time">10 min<small>Drive</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">Newquay Airport (NQY)<small>Connections to London, Manchester, Dublin, Lisbon</small></div>
+            <div class="time">15 min<small>Drive</small></div>
+            <div class="mode">→</div>
+          </div>
+        </div>
+
+        <div class="transport-extras">
+          <div class="label">Included for Expo guests</div>
+          <ul>
+            <li>Lodge shuttle to the Village every Expo morning</li>
+            <li>Secure board parking (surf &amp; skate)</li>
+            <li>Loan bikes for the weekend</li>
+            <li>Wetsuit drying room &amp; outdoor rinse</li>
+            <li>Expo programme &amp; tide chart in every room</li>
+            <li>Late breakfast on awards mornings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA band ──────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow">Limited rooms for the Expo weekend</div>
+    <h2>The only room in town<br>that comes with a <span class="accent">community</span>.</h2>
+    <p class="sub">
+      Around forty beds. Three nights. One weekend the rest of the year gets measured against.
+      Reserve now. We&rsquo;re holding rooms for Expo guests until the end of May.
+    </p>
+    <a href="#book" class="btn">Reserve your Expo stay <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ─── Booking ───────────────────────────────────────────────── -->
+<section class="booking" id="book">
+  <div class="wrap">
+    <div class="booking-cta">
+      <div class="eyebrow on-light">Reserve your stay <span class="dot"></span> 24 to 26 July 2026</div>
+      <h2 style="margin-top:14px;">Ready when you are.</h2>
+      <p style="margin-top:20px;">
+        Check live availability and book your Expo weekend stay directly through our reservations
+        system. Twin rooms, private doubles and dorm beds, all with breakfast, board storage and the
+        full lodge programme included.
+      </p>
+      <a href="https://hotels.cloudbeds.com/en/reservation/tXY35C?currency=gbp&amp;checkin=2026-07-24&amp;checkout=2026-07-27&amp;adults=2&amp;kids=0&amp;rid=530928"
+         target="_blank" rel="noopener" class="btn">
+        Check availability &amp; book <span class="arrow">→</span>
+      </a>
+      <p class="booking-fine">
+        Opens our secure reservations page in a new tab. Need a hand or booking for a group?
+        Email <a href="mailto:hello@elementalsurflodge.com">hello@elementalsurflodge.com</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Tweaks panel ──────────────────────────────────────────── -->
+<div id="tweaks-root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "amber",
+    "ctaStyle": "outline"
+  }/*EDITMODE-END*/;
+
+  // Accent palettes  — first color is hero in the swatch picker, rest stack
+  const ACCENT_VALUES = {
+    amber: { name: "Amber",     accent: "#eab308", hover: "#facc15", ink: "#0f172a" },
+    olive: { name: "Olive",     accent: "#b5c468", hover: "#cdd886", ink: "#0f172a" },
+    coral: { name: "Coral",     accent: "#ee6b3a", hover: "#f78a5e", ink: "#0f172a" },
+  };
+  const ACCENT_PALETTES = {
+    amber: ["#eab308", "#facc15", "#0f172a"],
+    olive: ["#b5c468", "#cdd886", "#0f172a"],
+    coral: ["#ee6b3a", "#f78a5e", "#0f172a"],
+  };
+
+  const CTA_VARIANTS = {
+    pill:    { radius: "9999px", padding: "14px 28px", bw: "2px", bg: "var(--accent)",    color: "var(--accent-ink)", border: "var(--accent)", shadow: "none" },
+    outline: { radius: "9999px", padding: "13px 26px", bw: "2px", bg: "transparent",      color: "var(--accent)",     border: "var(--accent)", shadow: "none" },
+    sharp:   { radius: "0",      padding: "16px 28px", bw: "0",   bg: "var(--accent)",    color: "var(--accent-ink)", border: "var(--accent)", shadow: "4px 4px 0 rgba(15,23,42,1)" },
+  };
+
+  function applyAccent(key) {
+    const v = ACCENT_VALUES[key] || ACCENT_VALUES.amber;
+    const r = document.documentElement.style;
+    r.setProperty("--accent", v.accent);
+    r.setProperty("--accent-hover", v.hover);
+    r.setProperty("--accent-ink", v.ink);
+  }
+  function applyCta(key) {
+    const v = CTA_VARIANTS[key] || CTA_VARIANTS.pill;
+    const r = document.documentElement.style;
+    r.setProperty("--cta-radius", v.radius);
+    r.setProperty("--cta-padding", v.padding);
+    r.setProperty("--cta-border-width", v.bw);
+    r.setProperty("--cta-bg", v.bg);
+    r.setProperty("--cta-color", v.color);
+    r.setProperty("--cta-border", v.border);
+    r.setProperty("--cta-shadow", v.shadow);
+  }
+
+  function App() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    React.useEffect(() => { applyAccent(t.accent); }, [t.accent]);
+    React.useEffect(() => { applyCta(t.ctaStyle); }, [t.ctaStyle]);
+
+    return (
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Accent colour" />
+        <TweakColor
+          label="Accent palette"
+          value={ACCENT_PALETTES[t.accent]}
+          options={Object.values(ACCENT_PALETTES)}
+          onChange={(palette) => {
+            const key = Object.keys(ACCENT_PALETTES).find(
+              (k) => ACCENT_PALETTES[k].join() === palette.join()
+            ) || "amber";
+            setTweak("accent", key);
+          }}
+        />
+        <TweakRadio
+          label="Variant"
+          value={t.accent}
+          options={[
+            { value: "amber", label: "Amber" },
+            { value: "olive", label: "Olive" },
+            { value: "coral", label: "Coral" },
+          ]}
+          onChange={(v) => setTweak("accent", v)}
+        />
+
+        <TweakSection label="Booking CTA" />
+        <TweakRadio
+          label="Style"
+          value={t.ctaStyle}
+          options={[
+            { value: "pill",    label: "Pill" },
+            { value: "outline", label: "Outline" },
+            { value: "sharp",   label: "Sharp" },
+          ]}
+          onChange={(v) => setTweak("ctaStyle", v)}
+        />
+      </TweaksPanel>
+    );
+  }
+
+  // Apply defaults immediately so first paint matches stored state.
+  applyAccent(TWEAK_DEFAULTS.accent);
+  applyCta(TWEAK_DEFAULTS.ctaStyle);
+
+  ReactDOM.createRoot(document.getElementById("tweaks-root")).render(<App />);
+</script>
+
+</body>
+</html>
