@@ -361,6 +361,17 @@
 .esl-expo .booking-cta .booking-fine a { color: var(--navy); border-bottom: 1px solid var(--accent); }
 .esl-expo .booking-cta .booking-fine a:hover { color: var(--accent); }
 
+.esl-expo .t-item .name a { color: inherit; text-decoration: none; transition: color 0.15s; }
+.esl-expo .t-item .name a:hover { color: var(--accent); }
+.esl-expo .map-open {
+  display: block; text-align: center; padding: 12px 16px; margin-top: -1px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--navy); background: var(--white);
+  border: 1px solid var(--border); border-top: none;
+  transition: background 0.15s, color 0.15s;
+}
+.esl-expo .map-open:hover { background: var(--warm-grey); color: var(--accent); }
+
 /* Responsive */
 @media (max-width: 980px) {
   .esl-expo section { padding: 72px 0; }
@@ -426,7 +437,7 @@
           <div class="e-label">UK Surf &amp; Skate Expo</div>
           <div class="e-dates">24<span class="e-month">·</span>25<span class="e-month">·</span>26</div>
           <div class="e-month" style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);">July 2026</div>
-          <div class="e-loc">Newquay Sports Centre &middot; TR7&nbsp;2SL</div>
+          <div class="e-loc">Wax Sports Centre &middot; Newquay</div>
         </div>
       </div>
     </div>
@@ -549,7 +560,7 @@
       <div>
         <div class="k">Venue</div>
         <div class="v">Newquay</div>
-        <div class="u">Sports Centre · TR7&nbsp;2SL</div>
+        <div class="u">Wax Sports Centre, Newquay</div>
       </div>
       <div>
         <div class="k">Expected</div>
@@ -650,51 +661,66 @@
     </div>
 
     <div class="transport-grid">
-      <div class="map-card">
-        <iframe
-          src="https://maps.google.com/maps?q=Newquay+Sports+Centre,+Newquay,+Cornwall,+TR7+2SL&output=embed&z=15"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Map showing Newquay Sports Centre, home of the UK Surf and Skate Expo 2026">
-        </iframe>
+      <div>
+        <div class="map-card">
+          <iframe
+            src="https://maps.google.com/maps?q=Elemental+Surf+Lodge,+Newquay,+Cornwall&output=embed&z=14"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of Newquay showing the lodge and key Expo locations">
+          </iframe>
+        </div>
+        <a href="https://maps.google.com/maps?q=Elemental+Surf+Lodge,+Newquay" target="_blank" rel="noopener" class="map-open">Open in Google Maps →</a>
       </div>
 
       <div>
         <div class="transport-list">
           <div class="t-item is-venue">
             <div class="star"></div>
-            <div class="name">UK Surf &amp; Skate Expo Village<small>Newquay Sports Centre · TR7&nbsp;2SL</small></div>
+            <div class="name"><a href="https://maps.google.com/?q=Wax+Sports+Centre,+Newquay,+Cornwall" target="_blank" rel="noopener">UK Surf &amp; Skate Expo<small>Wax Sports Centre · Newquay</small></a></div>
             <div class="time">12 min<small>Walk</small></div>
             <div class="mode">→</div>
           </div>
           <div class="t-item">
             <div class="star"></div>
-            <div class="name">Concrete Waves Skatepark<small>Free skate park · Bowl, street, pool</small></div>
+            <div class="name"><a href="https://maps.google.com/?q=Concrete+Waves+Skatepark,+Newquay" target="_blank" rel="noopener">Concrete Waves Skatepark<small>Free skate park · Bowl, street, pool</small></a></div>
             <div class="time">8 min<small>Walk</small></div>
             <div class="mode">→</div>
           </div>
           <div class="t-item">
             <div class="star"></div>
-            <div class="name">Towan Beach<small>Family friendly bay, lodge surf check</small></div>
-            <div class="time">6 min<small>Walk</small></div>
+            <div class="name"><a href="https://maps.google.com/?q=Great+Western+Beach,+Newquay" target="_blank" rel="noopener">Great Western Beach<small>Expo surf comp beach</small></a></div>
+            <div class="time">10 min<small>Walk</small></div>
             <div class="mode">→</div>
           </div>
           <div class="t-item">
             <div class="star"></div>
-            <div class="name">Newquay Train Station<small>Direct trains from Par &amp; the mainline</small></div>
-            <div class="time">5 min<small>Walk</small></div>
+            <div class="name"><a href="https://maps.google.com/?q=The+Community+Orchard,+Newquay" target="_blank" rel="noopener">Rising Tide Festival<small>The Community Orchard · Newquay</small></a></div>
+            <div class="time">10 min<small>Walk</small></div>
             <div class="mode">→</div>
           </div>
           <div class="t-item">
             <div class="star"></div>
-            <div class="name">Fistral Beach<small>The big name break, world tour history</small></div>
+            <div class="name"><a href="https://maps.google.com/?q=Fistral+Beach,+Newquay" target="_blank" rel="noopener">Fistral Beach<small>The big name break, world tour history</small></a></div>
             <div class="time">10 min<small>Drive</small></div>
             <div class="mode">→</div>
           </div>
           <div class="t-item">
             <div class="star"></div>
-            <div class="name">Newquay Airport (NQY)<small>Connections to London, Manchester, Dublin, Lisbon</small></div>
+            <div class="name"><a href="https://maps.google.com/?q=Towan+Beach,+Newquay" target="_blank" rel="noopener">Towan Beach<small>Town beach, lodge surf check</small></a></div>
+            <div class="time">6 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name"><a href="https://maps.google.com/?q=Newquay+Railway+Station" target="_blank" rel="noopener">Newquay Train Station<small>Direct trains from Par &amp; the mainline</small></a></div>
+            <div class="time">5 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name"><a href="https://maps.google.com/?q=Newquay+Cornwall+Airport" target="_blank" rel="noopener">Newquay Airport (NQY)<small>Connections to London, Manchester, Dublin, Lisbon</small></a></div>
             <div class="time">15 min<small>Drive</small></div>
             <div class="mode">→</div>
           </div>
