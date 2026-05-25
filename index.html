@@ -3,782 +3,394 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Elemental Surf Lodge · Official Accommodation Partner · UK Surf & Skate Expo 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" />
 
 <style>
-  /* ─── Tokens ─────────────────────────────────────────────────────── */
-  :root {
-    --navy:        #0f172a;
-    --navy-2:      #1e293b;
-    --navy-3:      #111a2e;
-    --amber:       #eab308;
-    --yellow:      #facc15;
-    --olive:       #b5c468;
-    --coral:       #ee6b3a;   /* co-brand */
-    --warm-grey:   #f4f3f1;
-    --charcoal:    #353b40;
-    --white:       #ffffff;
-    --border:      rgba(15,23,42,0.08);
-    --border-dark: rgba(255,255,255,0.10);
+:root {
+  --navy:        #0f172a;
+  --navy-2:      #1e293b;
+  --navy-3:      #111a2e;
+  --amber:       #eab308;
+  --yellow:      #facc15;
+  --warm-grey:   #f4f3f1;
+  --charcoal:    #353b40;
+  --white:       #ffffff;
+  --border:      rgba(15,23,42,0.08);
+  --border-dark: rgba(255,255,255,0.10);
+  --accent:       var(--amber);
+  --accent-hover: var(--yellow);
+  --accent-ink:   var(--navy);
+  --cta-radius:       9999px;
+  --cta-bg:           transparent;
+  --cta-color:        var(--accent);
+  --cta-border:       var(--accent);
+  --cta-border-width: 2px;
+  --cta-padding:      13px 26px;
+  --cta-shadow:       none;
+}
 
-    /* Tweakable */
-    --accent:       var(--amber);
-    --accent-hover: var(--yellow);
-    --accent-ink:   var(--navy);
+/* ── Scoped to .esl-expo to avoid Beaver Builder conflicts ── */
+.esl-expo *, .esl-expo *::before, .esl-expo *::after { box-sizing: border-box; }
+.esl-expo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.esl-expo img { max-width: 100%; display: block; }
+.esl-expo a { color: inherit; text-decoration: none; }
 
-    /* CTA shape — pill / outline / sharp */
-    --cta-radius:        9999px;
-    --cta-bg:            transparent;
-    --cta-color:         var(--accent);
-    --cta-border:        var(--accent);
-    --cta-border-width:  2px;
-    --cta-padding:       13px 26px;
-    --cta-shadow:        none;
-  }
+.esl-expo .eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent);
+}
+.esl-expo .eyebrow.on-light { color: var(--charcoal); }
+.esl-expo .eyebrow .dot {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); vertical-align: middle; margin: 0 10px 2px;
+}
 
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    color: var(--charcoal);
-    background: var(--white);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    text-wrap: pretty;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; text-decoration: none; }
+.esl-expo h1, .esl-expo h2, .esl-expo h3 {
+  font-weight: 900; letter-spacing: -0.01em; line-height: 1.05; margin: 0;
+}
+.esl-expo h1 { font-size: clamp(40px, 6.4vw, 88px); text-transform: uppercase; }
+.esl-expo h2 { font-size: clamp(30px, 4.2vw, 56px); text-transform: uppercase; }
+.esl-expo h3 { font-size: 22px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.esl-expo p  { margin: 0 0 1.1em; }
+.esl-expo .lede { font-size: 18px; line-height: 1.65; max-width: 60ch; }
 
-  /* ─── Type system ────────────────────────────────────────────────── */
-  .eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .eyebrow.on-light { color: var(--charcoal); }
-  .eyebrow .dot { display:inline-block; width:5px; height:5px; border-radius:50%;
-    background: var(--accent); vertical-align: middle; margin: 0 10px 2px; }
+.esl-expo .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.esl-expo section { padding: 96px 0; margin: 0; }
 
-  h1, h2, h3 { font-weight: 900; letter-spacing: -0.01em; line-height: 1.05; margin: 0; }
-  h1 { font-size: clamp(40px, 6.4vw, 88px); text-transform: uppercase; }
-  h2 { font-size: clamp(30px, 4.2vw, 56px); text-transform: uppercase; }
-  h3 { font-size: 22px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
-  p  { margin: 0 0 1.1em; }
-  .lede { font-size: 18px; line-height: 1.65; max-width: 60ch; }
+.esl-expo .section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap; margin-bottom: 56px;
+}
+.esl-expo .section-head .title-stack { max-width: 720px; }
+.esl-expo .section-head h2 { margin-top: 14px; }
+.esl-expo .section-head .meta {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--charcoal); opacity: 0.55; white-space: nowrap;
+}
 
-  /* ─── Layout ─────────────────────────────────────────────────────── */
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
-  section { padding: 96px 0; }
-  .section-head { display: flex; align-items: baseline; justify-content: space-between;
-    gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
-  .section-head .title-stack { max-width: 720px; }
-  .section-head h2 { margin-top: 14px; }
-  .section-head .meta {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--charcoal); opacity: 0.55; white-space: nowrap;
-  }
+/* Buttons */
+.esl-expo .btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: inherit; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: var(--cta-padding); border-radius: var(--cta-radius);
+  background: var(--cta-bg); color: var(--cta-color);
+  border: var(--cta-border-width) solid var(--cta-border);
+  box-shadow: var(--cta-shadow); cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.esl-expo .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--navy); }
+.esl-expo .btn .arrow { display: inline-block; transition: transform 0.2s ease; }
+.esl-expo .btn:hover .arrow { transform: translateX(3px); }
+.esl-expo .btn--ghost {
+  background: transparent; color: var(--white); border-color: rgba(255,255,255,0.45);
+}
+.esl-expo .btn--ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--white); color: var(--white); }
 
-  /* ─── Buttons ────────────────────────────────────────────────────── */
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: inherit; font-size: 12px; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    padding: var(--cta-padding);
-    border-radius: var(--cta-radius);
-    background: var(--cta-bg);
-    color: var(--cta-color);
-    border: var(--cta-border-width) solid var(--cta-border);
-    box-shadow: var(--cta-shadow);
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-  .btn .arrow { display:inline-block; transition: transform 0.2s ease; }
-  .btn:hover .arrow { transform: translateX(3px); }
+/* Hero */
+.esl-expo .hero {
+  position: relative; background: var(--navy); color: var(--white);
+  padding: 96px 0 0; overflow: hidden;
+}
+.esl-expo .hero .wrap { position: relative; z-index: 2; }
+.esl-expo .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: end; }
+.esl-expo .hero h1 .accent { color: var(--accent); }
+.esl-expo .hero h1 .line { display: block; }
+.esl-expo .hero .sub {
+  font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.78);
+  max-width: 52ch; margin: 28px 0 36px; font-weight: 300;
+}
+.esl-expo .hero .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 64px; }
 
-  .btn--ghost {
-    background: transparent;
-    color: var(--white);
-    border-color: rgba(255,255,255,0.45);
-  }
-  .btn--ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--white); color: var(--white); }
-  .on-light .btn--ghost { color: var(--charcoal); border-color: rgba(15,23,42,0.25); }
-  .on-light .btn--ghost:hover { background: rgba(15,23,42,0.04); border-color: var(--navy); color: var(--navy); }
+.esl-expo .hero-art {
+  position: relative; aspect-ratio: 4/5; border-radius: 14px;
+  background: linear-gradient(180deg, #1e293b 0%, #0b1224 100%);
+  border: 0.5px solid var(--border-dark); box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+.esl-expo .hero-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.esl-expo .hero-art > *:not(.hero-photo) { z-index: 2; position: relative; }
+.esl-expo .hero-art .corner-tag {
+  position: absolute; top: 18px; left: 18px;
+  background: var(--accent); color: var(--navy);
+  padding: 8px 12px; font-size: 10px; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
 
-  /* ─── Utility bar ────────────────────────────────────────────────── */
-  .utility {
-    background: var(--navy);
-    color: rgba(255,255,255,0.78);
-    border-bottom: 1px solid var(--border-dark);
-    font-size: 10.5px; font-weight: 600;
-    letter-spacing: 0.22em; text-transform: uppercase;
-  }
-  .utility .wrap { display: flex; align-items: center; justify-content: space-between;
-    padding-top: 10px; padding-bottom: 10px; gap: 24px; flex-wrap: wrap; }
-  .utility .partner-mark { color: var(--accent); }
-  .utility .pipes { color: rgba(255,255,255,0.25); margin: 0 12px; }
+/* Anniversary stamp — overflow:hidden clips the image to the circle */
+.esl-expo .anniversary-stamp {
+  position: absolute; top: -28px; right: -28px;
+  width: 150px; height: 150px; border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  transform: rotate(-9deg); z-index: 3;
+  overflow: hidden;
+}
+.esl-expo .anniversary-stamp img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+}
 
-  /* ─── Header / nav ───────────────────────────────────────────────── */
-  header.nav {
-    background: var(--navy);
-    color: var(--white);
-    position: sticky; top: 0; z-index: 50;
-    border-bottom: 1px solid var(--border-dark);
-  }
-  header.nav .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-top: 18px; padding-bottom: 18px; gap: 24px;
-  }
-  .logo {
-    color: var(--accent);
-    font-weight: 900; font-size: 18px; line-height: 0.95;
-    text-transform: uppercase; letter-spacing: 0.04em;
-  }
-  .logo small {
-    display: block;
-    color: rgba(255,255,255,0.45);
-    font-size: 9px; font-weight: 600;
-    letter-spacing: 0.28em; margin-top: 4px;
-  }
-  nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-  nav a {
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(255,255,255,0.78);
-    transition: color 0.15s ease;
-  }
-  nav a:hover { color: var(--accent); }
-  nav a.current { color: var(--white); }
-  nav a.current::after {
-    content: ""; display: block; height: 2px; width: 24px;
-    background: var(--accent); margin-top: 6px;
-  }
+.esl-expo .event-card {
+  position: absolute; right: 18px; bottom: 18px;
+  background: rgba(15,23,42,0.85); backdrop-filter: blur(12px);
+  border: 0.5px solid var(--border-dark); border-left: 3px solid var(--accent);
+  padding: 16px 18px; width: 200px;
+}
+.esl-expo .event-card .e-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+}
+.esl-expo .event-card .e-dates {
+  font-size: 22px; font-weight: 900; line-height: 1.05; margin-bottom: 4px;
+  text-transform: uppercase; color: var(--white);
+}
+.esl-expo .event-card .e-month { color: rgba(255,255,255,0.65); }
+.esl-expo .event-card .e-loc {
+  font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em; margin-top: 8px;
+}
 
-  /* ─── Hero ───────────────────────────────────────────────────────── */
-  .hero {
-    position: relative;
-    background: var(--navy);
-    color: var(--white);
-    padding: 96px 0 0;
-    overflow: hidden;
-  }
-  .hero .wrap { position: relative; z-index: 2; }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.35fr 1fr;
-    gap: 64px;
-    align-items: end;
-  }
-  .hero h1 .accent { color: var(--accent); }
-  .hero h1 .line { display: block; }
-  .hero .sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.78);
-    max-width: 52ch; margin: 28px 0 36px; font-weight: 300; }
-  .hero .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 64px; }
-  .hero-art {
-    position: relative;
-    aspect-ratio: 4/5;
-    border-radius: 14px;
-    background:
-      repeating-linear-gradient(135deg,
-        rgba(255,255,255,0.05) 0 24px,
-        rgba(255,255,255,0.02) 24px 48px),
-      linear-gradient(180deg, #1e293b 0%, #0b1224 100%);
-    border: 0.5px solid var(--border-dark);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-  }
-  .hero-photo {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 14px;
-    z-index: 0;
-  }
-  .hero-art > *:not(.hero-photo) { z-index: 2; }
-  .hero-art .corner-tag {
-    position: absolute; top: 18px; left: 18px;
-    background: var(--accent); color: var(--navy);
-    padding: 8px 12px; font-size: 10px; font-weight: 800;
-    letter-spacing: 0.18em; text-transform: uppercase;
-  }
-  .anniversary-stamp {
-    position: absolute;
-    top: -28px; right: -28px;
-    width: 150px; height: 150px;
-    background: var(--warm-grey);
-    border-radius: 50%;
-    padding: 8px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
-    transform: rotate(-9deg);
-    z-index: 3;
-  }
-  .anniversary-stamp img { width: 100%; height: 100%; display: block; }
-  .hero-art .placeholder-meta {
-    position: absolute; bottom: 18px; left: 18px;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 10px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.04em;
-  }
-  .hero-art .event-card {
-    position: absolute; right: 18px; bottom: 18px;
-    background: rgba(15,23,42,0.85);
-    backdrop-filter: blur(12px);
-    border: 0.5px solid var(--border-dark);
-    border-left: 3px solid var(--accent);
-    padding: 16px 18px;
-    width: 200px;
-  }
-  .event-card .e-label {
-    font-size: 9px; font-weight: 700; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
-  }
-  .event-card .e-dates {
-    font-size: 22px; font-weight: 900; line-height: 1.05; margin-bottom: 4px;
-    text-transform: uppercase;
-  }
-  .event-card .e-month { color: rgba(255,255,255,0.65); }
-  .event-card .e-loc {
-    font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.7);
-    letter-spacing: 0.04em; margin-top: 8px;
-  }
+.esl-expo .hero-marquee {
+  margin-top: 8px; border-top: 1px solid var(--border-dark);
+  border-bottom: 4px solid var(--accent); background: var(--navy-3);
+  overflow: hidden; white-space: nowrap;
+}
+.esl-expo .hero-marquee .track {
+  display: inline-flex; gap: 56px; padding: 22px 0;
+  animation: esl-marquee 38s linear infinite;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(255,255,255,0.85);
+}
+.esl-expo .hero-marquee .track span { display: inline-flex; align-items: center; gap: 56px; }
+.esl-expo .hero-marquee .track i {
+  display: inline-block; width: 8px; height: 8px;
+  background: var(--accent); border-radius: 50%; font-style: normal;
+}
+@keyframes esl-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
-  .hero-marquee {
-    margin-top: 8px;
-    border-top: 1px solid var(--border-dark);
-    border-bottom: 4px solid var(--accent);
-    background: var(--navy-3);
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .hero-marquee .track {
-    display: inline-flex; gap: 56px;
-    padding: 22px 0;
-    animation: marquee 38s linear infinite;
-    font-size: 14px; font-weight: 700;
-    letter-spacing: 0.28em; text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-  }
-  .hero-marquee .track span { display: inline-flex; align-items: center; gap: 56px; }
-  .hero-marquee .track i {
-    display: inline-block; width: 8px; height: 8px;
-    background: var(--accent); border-radius: 50%; font-style: normal;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
+/* Partnership */
+.esl-expo .partnership {
+  background: var(--warm-grey); border-bottom: 1px solid var(--border); padding: 56px 0;
+}
+.esl-expo .partnership .wrap {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 48px;
+}
+.esl-expo .pship-mark {
+  font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.05; font-size: 18px;
+}
+.esl-expo .pship-mark.lodge { color: var(--navy); }
+.esl-expo .pship-mark.expo  { color: var(--charcoal); }
+.esl-expo .pship-logo { display: block; width: 110px; height: auto; }
+.esl-expo .pship-mark small {
+  display: block; font-size: 9px; font-weight: 600;
+  letter-spacing: 0.22em; opacity: 0.55; margin-top: 4px;
+}
+.esl-expo .pship-line {
+  display: flex; align-items: center; gap: 18px;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0;
+}
+.esl-expo .pship-line .label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--accent); white-space: nowrap;
+}
+.esl-expo .pship-line .desc { font-size: 13px; font-weight: 500; color: var(--charcoal); }
 
-  /* ─── Partnership statement ─────────────────────────────────────── */
-  .partnership {
-    background: var(--warm-grey);
-    border-bottom: 1px solid var(--border);
-    padding: 56px 0;
-  }
-  .partnership .wrap { display: grid; grid-template-columns: auto 1fr auto;
-    align-items: center; gap: 48px; }
-  .pship-mark {
-    font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em;
-    line-height: 1.05; font-size: 18px;
-  }
-  .pship-mark.lodge { color: var(--navy); }
-  .pship-mark.expo  { color: var(--charcoal); }
-  .pship-logo { display: block; width: 200px; height: auto; }
-  .pship-mark.expo .label-stack { line-height: 1.05; }
-  .pship-mark small { display:block; font-size: 9px; font-weight: 600;
-    letter-spacing: 0.22em; opacity: 0.55; margin-top: 4px; }
-  .pship-x {
-    width: 28px; height: 28px; flex-shrink:0;
-    color: var(--accent);
-    font-weight: 900; font-size: 24px; text-align: center; line-height: 28px;
-  }
-  .pship-line {
-    display: flex; align-items: center; gap: 18px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 0;
-  }
-  .pship-line .label {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.24em;
-    text-transform: uppercase; color: var(--accent);
-  }
-  .pship-line .desc {
-    font-size: 13px; font-weight: 500;
-    color: var(--charcoal);
-  }
+/* Expo section */
+.esl-expo .expo-section { background: var(--white); }
+.esl-expo .expo-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; margin-bottom: 72px; }
+.esl-expo .expo-intro p { font-size: 18px; line-height: 1.65; }
+.esl-expo .expo-intro p + p { font-size: 15px; line-height: 1.7; color: rgba(53,59,64,0.78); }
+.esl-expo .expo-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.esl-expo .e-card {
+  background: var(--white); border: 1px solid var(--border); padding: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.esl-expo .e-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.esl-expo .e-card .ix {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--accent);
+}
+.esl-expo .e-card h3 { color: var(--navy); font-size: 24px; }
+.esl-expo .e-card p { font-size: 14px; line-height: 1.65; margin: 0; color: rgba(53,59,64,0.85); }
+.esl-expo .e-card ul {
+  list-style: none; padding: 0; margin: 6px 0 0;
+  border-top: 1px solid var(--border); padding-top: 16px;
+}
+.esl-expo .e-card li {
+  font-size: 12px; font-weight: 500; padding: 6px 0;
+  display: flex; justify-content: space-between; gap: 12px;
+  border-bottom: 1px dashed var(--border);
+}
+.esl-expo .e-card li:last-child { border-bottom: none; }
+.esl-expo .e-card li span:last-child {
+  color: var(--accent); font-weight: 700; letter-spacing: 0.04em;
+  font-size: 11px; text-transform: uppercase; white-space: nowrap;
+}
 
-  /* ─── About the Expo ─────────────────────────────────────────────── */
-  .expo {
-    background: var(--white);
-  }
-  .expo-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; margin-bottom: 72px; }
-  .expo-intro p { font-size: 18px; line-height: 1.65; }
-  .expo-intro p + p { font-size: 15px; line-height: 1.7; color: rgba(53,59,64,0.78); }
+.esl-expo .facts {
+  margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+}
+.esl-expo .facts div { padding: 28px 24px; border-right: 1px solid var(--border); }
+.esl-expo .facts div:last-child { border-right: none; }
+.esl-expo .facts .k {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+}
+.esl-expo .facts .v { font-size: 28px; font-weight: 900; color: var(--navy); line-height: 1.05; }
+.esl-expo .facts .u { font-size: 12px; color: rgba(53,59,64,0.65); margin-top: 6px; font-weight: 500; }
 
-  .expo-cards {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  }
-  .e-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 32px;
-    display: flex; flex-direction: column; gap: 16px;
-    transition: border-color 0.18s ease, transform 0.18s ease;
-  }
-  .e-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .e-card .ix {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.18em; color: var(--accent);
-  }
-  .e-card h3 { color: var(--navy); font-size: 24px; }
-  .e-card p { font-size: 14px; line-height: 1.65; margin: 0; color: rgba(53,59,64,0.85); }
-  .e-card ul {
-    list-style: none; padding: 0; margin: 6px 0 0;
-    border-top: 1px solid var(--border); padding-top: 16px;
-  }
-  .e-card li {
-    font-size: 12px; font-weight: 500; padding: 6px 0;
-    display: flex; justify-content: space-between; gap: 12px;
-    border-bottom: 1px dashed var(--border);
-  }
-  .e-card li:last-child { border-bottom: none; }
-  .e-card li span:last-child { color: var(--accent); font-weight: 700;
-    letter-spacing: 0.04em; font-size: 11px; text-transform: uppercase; white-space:nowrap; }
+/* Why stay */
+.esl-expo .why { background: var(--navy); color: var(--white); border-top: 4px solid var(--accent); }
+.esl-expo .why .section-head h2 { color: var(--white); }
+.esl-expo .why .section-head p { color: rgba(255,255,255,0.7); max-width: 56ch; font-size: 16px; }
+.esl-expo .why .meta { color: rgba(255,255,255,0.4); }
+.esl-expo .values {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border-dark); border: 1px solid var(--border-dark);
+}
+.esl-expo .value {
+  background: var(--navy); padding: 40px 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  min-height: 260px; transition: background 0.18s ease;
+}
+.esl-expo .value:hover { background: var(--navy-2); }
+.esl-expo .value .num {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent);
+}
+.esl-expo .value h3 { color: var(--white); font-size: 22px; max-width: 18ch; }
+.esl-expo .value p { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.65; margin: auto 0 0; font-weight: 300; }
 
-  /* ─── Fact strip ─────────────────────────────────────────────────── */
-  .facts {
-    margin-top: 56px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid var(--border);
-  }
-  .facts div {
-    padding: 28px 24px;
-    border-right: 1px solid var(--border);
-  }
-  .facts div:last-child { border-right: none; }
-  .facts .k {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
-  }
-  .facts .v {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px; font-weight: 900; color: var(--navy);
-    line-height: 1.05; letter-spacing: -0.01em;
-  }
-  .facts .u {
-    font-size: 12px; color: rgba(53,59,64,0.65); margin-top: 6px;
-    font-weight: 500;
-  }
+/* Transport */
+.esl-expo .transport { background: var(--warm-grey); }
+.esl-expo .transport-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: start; }
+.esl-expo .map-card {
+  position: relative; border: 1px solid var(--border); overflow: hidden; height: 500px;
+}
+.esl-expo .map-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.esl-expo .transport-list { display: flex; flex-direction: column; }
+.esl-expo .t-item {
+  display: grid; grid-template-columns: 8px 1fr auto auto;
+  align-items: center; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--border);
+}
+.esl-expo .t-item:first-child { padding-top: 0; }
+.esl-expo .t-item:last-child { border-bottom: none; }
+.esl-expo .t-item .mode {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; font-weight: 700; color: var(--accent);
+}
+.esl-expo .t-item .name { font-size: 16px; font-weight: 600; color: var(--navy); }
+.esl-expo .t-item .name small { display: block; font-size: 12px; font-weight: 400; color: rgba(53,59,64,0.6); margin-top: 2px; }
+.esl-expo .t-item .time { font-size: 14px; font-weight: 700; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.06em; }
+.esl-expo .t-item .time small { display: block; font-size: 10px; font-weight: 500; color: rgba(53,59,64,0.55); margin-top: 2px; letter-spacing: 0.18em; }
+.esl-expo .t-item .star { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0; }
+.esl-expo .t-item.is-venue .star { opacity: 1; }
+.esl-expo .transport-extras {
+  margin-top: 28px; background: var(--navy); color: var(--white);
+  padding: 24px; display: flex; flex-direction: column; gap: 14px;
+}
+.esl-expo .transport-extras .label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+}
+.esl-expo .transport-extras ul {
+  list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px;
+}
+.esl-expo .transport-extras li {
+  font-size: 13px; color: rgba(255,255,255,0.85);
+  display: flex; align-items: flex-start; gap: 10px; padding: 4px 0;
+}
+.esl-expo .transport-extras li::before {
+  content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0; margin-top: 8px;
+}
 
-  /* ─── Why stay (values) ──────────────────────────────────────────── */
-  .why {
-    background: var(--navy);
-    color: var(--white);
-    border-top: 4px solid var(--accent);
-  }
-  .why .section-head h2 { color: var(--white); }
-  .why .section-head p { color: rgba(255,255,255,0.7); max-width: 56ch; font-size: 16px; }
-  .why .meta { color: rgba(255,255,255,0.4); }
+/* Photo strips */
+.esl-expo .photo-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+  background: var(--navy); border-top: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent); padding: 6px;
+}
+.esl-expo .photo-strip.two-col { grid-template-columns: repeat(2, 1fr); }
+.esl-expo .photo-strip .photo { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--navy-2); }
+.esl-expo .photo-strip .photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.esl-expo .photo-strip .photo:hover img { transform: scale(1.03); }
+.esl-expo .photo-strip .caption {
+  position: absolute; bottom: 14px; left: 14px;
+  background: rgba(15,23,42,0.78); color: var(--white);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 7px 11px; border-left: 2px solid var(--accent);
+}
+.esl-expo .photo-strip .caption small {
+  display: block; font-size: 9px; font-weight: 500; letter-spacing: 0.18em; opacity: 0.72; margin-top: 3px;
+}
 
-  .values {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border-dark);
-    border: 1px solid var(--border-dark);
-  }
-  .value {
-    background: var(--navy);
-    padding: 40px 32px;
-    display: flex; flex-direction: column; gap: 14px;
-    min-height: 260px;
-    transition: background 0.18s ease;
-  }
-  .value:hover { background: var(--navy-2); }
-  .value .num {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
-    color: var(--accent);
-  }
-  .value h3 { color: var(--white); font-size: 22px; max-width: 18ch; }
-  .value p { color: rgba(255,255,255,0.7); font-size: 14px;
-    line-height: 1.65; margin: auto 0 0; font-weight: 300; }
+/* CTA band */
+.esl-expo .cta-band {
+  background: var(--navy-3); color: var(--white);
+  border-top: 4px solid var(--accent); border-bottom: 4px solid var(--accent);
+  padding: 80px 0; text-align: center;
+}
+.esl-expo .cta-band .eyebrow { color: var(--accent); margin-bottom: 18px; }
+.esl-expo .cta-band h2 { color: var(--white); max-width: 22ch; margin: 0 auto 20px; }
+.esl-expo .cta-band h2 .accent { color: var(--accent); }
+.esl-expo .cta-band .sub { color: rgba(255,255,255,0.72); font-size: 16px; max-width: 50ch; margin: 0 auto 36px; }
 
-  /* ─── Distance / transport ───────────────────────────────────────── */
-  .transport {
-    background: var(--warm-grey);
-  }
-  .transport-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 64px;
-    align-items: stretch;
-  }
-  .map-card {
-    position: relative;
-    background: var(--white);
-    border: 1px solid var(--border);
-    aspect-ratio: 4/3.4;
-    overflow: hidden;
-  }
-  .map-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(circle at 28% 62%, rgba(181,196,104,0.18) 0 18%, transparent 19%),
-      radial-gradient(circle at 70% 30%, rgba(234,179,8,0.10) 0 22%, transparent 23%),
-      repeating-linear-gradient(45deg,
-        rgba(15,23,42,0.04) 0 1px, transparent 1px 18px),
-      repeating-linear-gradient(-45deg,
-        rgba(15,23,42,0.04) 0 1px, transparent 1px 18px);
-  }
-  .coast {
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(180deg, rgba(181,196,104,0.0) 60%, rgba(15,23,42,0.05) 100%);
-  }
-  .map-pin {
-    position: absolute;
-    transform: translate(-50%, -100%);
-    display: flex; align-items: center; gap: 8px;
-    font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
-    color: var(--navy);
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 6px 10px;
-    box-shadow: 0 4px 10px rgba(15,23,42,0.08);
-    white-space: nowrap;
-  }
-  .map-pin::after {
-    content: ""; position: absolute; left: 50%; bottom: -6px;
-    width: 10px; height: 10px; transform: translateX(-50%) rotate(45deg);
-    background: var(--white);
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .map-pin .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent);
-  }
-  .map-pin.lodge { font-weight: 900; }
-  .map-pin.lodge .dot { background: var(--navy); width: 10px; height: 10px; }
-  .map-pin.lodge::before {
-    content: ""; position: absolute; left: 50%; top: 100%; transform: translate(-50%, 4px);
-    width: 28px; height: 28px; border: 2px solid var(--navy); border-radius: 50%; opacity: 0.18;
-  }
-  .map-label {
-    position: absolute;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 10px; letter-spacing: 0.06em;
-    color: rgba(15,23,42,0.4);
-    text-transform: uppercase;
-  }
+/* Booking */
+.esl-expo .booking {
+  background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.esl-expo .booking-cta { max-width: 640px; margin: 0 auto; text-align: center; padding: 8px 0; }
+.esl-expo .booking-cta h2 { color: var(--navy); }
+.esl-expo .booking-cta p { font-size: 17px; line-height: 1.7; color: rgba(53,59,64,0.85); max-width: 52ch; margin-left: auto; margin-right: auto; }
+.esl-expo .booking-cta .btn { margin-top: 16px; }
+.esl-expo .booking-cta .booking-fine { margin-top: 28px; font-size: 12px; color: rgba(53,59,64,0.6); }
+.esl-expo .booking-cta .booking-fine a { color: var(--navy); border-bottom: 1px solid var(--accent); }
+.esl-expo .booking-cta .booking-fine a:hover { color: var(--accent); }
 
-  .transport-list { display: flex; flex-direction: column; }
-  .t-item {
-    display: grid;
-    grid-template-columns: 30px 1fr auto auto;
-    align-items: center;
-    gap: 18px;
-    padding: 22px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .t-item:first-child { padding-top: 0; }
-  .t-item:last-child { border-bottom: none; }
-  .t-item .mode {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px; font-weight: 700; color: var(--accent);
-  }
-  .t-item .name {
-    font-size: 16px; font-weight: 600;
-    color: var(--navy); letter-spacing: -0.005em;
-  }
-  .t-item .name small {
-    display: block;
-    font-size: 12px; font-weight: 400;
-    color: rgba(53,59,64,0.6); margin-top: 2px;
-  }
-  .t-item .time {
-    font-size: 14px; font-weight: 700; color: var(--charcoal);
-    text-transform: uppercase; letter-spacing: 0.06em;
-  }
-  .t-item .time small {
-    display:block; font-size: 10px; font-weight: 500;
-    color: rgba(53,59,64,0.55); margin-top: 2px; letter-spacing: 0.18em;
-  }
-  .t-item .star {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent); opacity: 0;
-  }
-  .t-item.is-venue .star { opacity: 1; }
-  .t-item.is-venue .name { color: var(--navy); }
-
-  .transport-extras {
-    margin-top: 28px;
-    background: var(--navy);
-    color: var(--white);
-    padding: 24px;
-    display: flex; flex-direction: column; gap: 14px;
-  }
-  .transport-extras .label {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent);
-  }
-  .transport-extras ul {
-    list-style: none; padding: 0; margin: 0;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px;
-  }
-  .transport-extras li {
-    font-size: 13px; font-weight: 400;
-    color: rgba(255,255,255,0.85);
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 4px 0;
-  }
-  .transport-extras li::before {
-    content: ""; display: inline-block;
-    width: 5px; height: 5px; border-radius: 50%;
-    background: var(--accent); flex-shrink: 0; margin-top: 8px;
-  }
-
-  /* ─── Photo strips ───────────────────────────────────────────────── */
-  .photo-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 6px;
-    background: var(--navy);
-    border-top: 4px solid var(--accent);
-    border-bottom: 4px solid var(--accent);
-    padding: 6px;
-  }
-  .photo-strip .photo {
-    position: relative;
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    background: var(--navy-2);
-  }
-  .photo-strip .photo img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-  }
-  .photo-strip .photo:hover img { transform: scale(1.03); }
-  .photo-strip .caption {
-    position: absolute;
-    bottom: 14px; left: 14px;
-    background: rgba(15,23,42,0.78);
-    color: var(--white);
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    padding: 7px 11px;
-    border-left: 2px solid var(--accent);
-  }
-  .photo-strip .caption small {
-    display: block;
-    font-size: 9px; font-weight: 500;
-    letter-spacing: 0.18em;
-    opacity: 0.72;
-    margin-top: 3px;
-  }
-
-  /* ─── CTA band ───────────────────────────────────────────────────── */
-  .cta-band {
-    background: var(--navy-3);
-    color: var(--white);
-    border-top: 4px solid var(--accent);
-    border-bottom: 4px solid var(--accent);
-    padding: 80px 0;
-    text-align: center;
-  }
-  .cta-band .eyebrow { color: var(--accent); margin-bottom: 18px; }
-  .cta-band h2 { color: var(--white); max-width: 22ch; margin: 0 auto 20px; }
-  .cta-band h2 .accent { color: var(--accent); }
-  .cta-band .sub {
-    color: rgba(255,255,255,0.72);
-    font-size: 16px; max-width: 50ch; margin: 0 auto 36px;
-  }
-
-  /* ─── Booking form ───────────────────────────────────────────────── */
-  .booking {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .booking-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 56px;
-    align-items: start;
-  }
-  .booking-cta {
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 8px 0;
-  }
-  .booking-cta h2 { color: var(--navy); }
-  .booking-cta p {
-    font-size: 17px; line-height: 1.7;
-    color: rgba(53,59,64,0.85);
-    max-width: 52ch; margin-left: auto; margin-right: auto;
-  }
-  .booking-cta .btn { margin-top: 16px; }
-  .booking-cta .booking-fine {
-    margin-top: 28px;
-    font-size: 12px;
-    color: rgba(53,59,64,0.6);
-    letter-spacing: 0.02em;
-  }
-  .booking-cta .booking-fine a { color: var(--navy); border-bottom: 1px solid var(--accent); }
-  .booking-cta .booking-fine a:hover { color: var(--accent); }
-  .booking-copy h2 { color: var(--navy); }
-  .booking-copy p { font-size: 16px; line-height: 1.7; }
-  .booking-copy ul {
-    list-style: none; padding: 0; margin: 28px 0 0;
-    border-top: 1px solid var(--border);
-  }
-  .booking-copy li {
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    display: flex; justify-content: space-between;
-    font-size: 13px; font-weight: 500;
-  }
-  .booking-copy li span:last-child { color: var(--accent); font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase; font-size: 11px; }
-
-  .booking-form {
-    background: var(--warm-grey);
-    border: 1px solid var(--border);
-    border-top: 4px solid var(--accent);
-    padding: 36px;
-  }
-  .booking-form h3 {
-    color: var(--navy); margin-bottom: 24px;
-    font-size: 18px;
-  }
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px 18px;
-  }
-  .field {
-    display: flex; flex-direction: column; gap: 6px;
-  }
-  .field.full { grid-column: 1 / -1; }
-  .field label {
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--charcoal); opacity: 0.7;
-  }
-  .field input, .field select {
-    appearance: none; -webkit-appearance: none;
-    font-family: inherit; font-size: 14px; font-weight: 500;
-    color: var(--navy);
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 12px 14px;
-    border-radius: 4px;
-  }
-  .field select {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%230f172a' d='M0 0h10L5 6z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-  }
-  .field input:focus, .field select:focus {
-    outline: none; border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(234,179,8,0.18);
-  }
-  .submit-row {
-    grid-column: 1 / -1;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 18px; margin-top: 8px; flex-wrap: wrap;
-  }
-  .submit-row .fine {
-    font-size: 11px; font-weight: 500;
-    color: rgba(53,59,64,0.6); max-width: 36ch;
-  }
-
-  /* ─── Footer ─────────────────────────────────────────────────────── */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.7);
-    padding: 72px 0 36px;
-    border-top: 4px solid var(--accent);
-  }
-  footer .wrap {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 48px;
-  }
-  footer h4 {
-    color: var(--white);
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    margin: 0 0 18px;
-  }
-  footer ul { list-style: none; margin:0; padding:0; }
-  footer li { padding: 4px 0; font-size: 13px; font-weight: 400; }
-  footer a:hover { color: var(--accent); }
-  footer .footer-brand .logo { font-size: 22px; }
-  footer .footer-brand p { font-size: 13px; max-width: 36ch; margin-top: 16px;
-    color: rgba(255,255,255,0.6); line-height: 1.7; }
-  footer .partner-callout {
-    margin-top: 20px;
-    border: 1px solid var(--border-dark);
-    border-left: 3px solid var(--accent);
-    padding: 14px 16px;
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-  }
-  .colophon {
-    margin-top: 56px; padding-top: 24px;
-    border-top: 1px solid var(--border-dark);
-    display: flex; justify-content: space-between;
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-  }
-
-  /* ─── Responsive ─────────────────────────────────────────────────── */
-  @media (max-width: 980px) {
-    section { padding: 72px 0; }
-    .hero { padding-top: 56px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-    .hero-art { aspect-ratio: 16/10; }
-    .expo-intro { grid-template-columns: 1fr; gap: 24px; }
-    .expo-cards { grid-template-columns: 1fr; }
-    .facts { grid-template-columns: 1fr 1fr; }
-    .facts div { border-right: none; border-bottom: 1px solid var(--border); }
-    .facts div:nth-child(odd) { border-right: 1px solid var(--border); }
-    .values { grid-template-columns: 1fr; }
-    .transport-grid, .booking-grid { grid-template-columns: 1fr; gap: 36px; }
-    .partnership .wrap { grid-template-columns: 1fr; gap: 24px; text-align: left; }
-    .transport-extras ul { grid-template-columns: 1fr; }
-    .photo-strip { grid-template-columns: 1fr 1fr; }
-    .photo-strip .photo:nth-child(3) { display: none; }
-    footer .wrap { grid-template-columns: 1fr 1fr; }
-    nav ul { display: none; }
-  }
-  @media (max-width: 560px) {
-    .wrap { padding: 0 20px; }
-    .utility .wrap { font-size: 9.5px; }
-    .facts { grid-template-columns: 1fr; }
-    .facts div { border-right: none !important; }
-    footer .wrap { grid-template-columns: 1fr; }
-  }
+/* Responsive */
+@media (max-width: 980px) {
+  .esl-expo section { padding: 72px 0; }
+  .esl-expo .hero { padding-top: 56px; }
+  .esl-expo .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .esl-expo .hero-art { aspect-ratio: 16/10; }
+  .esl-expo .expo-intro { grid-template-columns: 1fr; gap: 24px; }
+  .esl-expo .expo-cards { grid-template-columns: 1fr; }
+  .esl-expo .facts { grid-template-columns: 1fr 1fr; }
+  .esl-expo .facts div { border-right: none; border-bottom: 1px solid var(--border); }
+  .esl-expo .facts div:nth-child(odd) { border-right: 1px solid var(--border); }
+  .esl-expo .values { grid-template-columns: 1fr; }
+  .esl-expo .transport-grid { grid-template-columns: 1fr; gap: 36px; }
+  .esl-expo .map-card { height: 360px; }
+  .esl-expo .partnership .wrap { grid-template-columns: 1fr; gap: 24px; }
+  .esl-expo .transport-extras ul { grid-template-columns: 1fr; }
+  .esl-expo .photo-strip { grid-template-columns: 1fr 1fr; }
+  .esl-expo .photo-strip .photo:nth-child(3) { display: none; }
+}
+@media (max-width: 560px) {
+  .esl-expo .wrap { padding: 0 20px; }
+  .esl-expo .facts { grid-template-columns: 1fr; }
+  .esl-expo .facts div { border-right: none !important; }
+}
 </style>
 </head>
 <body>
+<div class="esl-expo">
 
-<!-- ─── Hero ───────────────────────────────────────────────────── -->
+<!-- Hero -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-grid">
@@ -802,16 +414,16 @@
         </div>
       </div>
 
-      <div class="hero-art" aria-label="Lodge guests walking to the water at Fistral Beach">
-        <img class="hero-photo" src="https://elementalsurflodge.com/wp-content/uploads/2026/05/square.jpeg" alt="Lodge guests walking to the water at Fistral Beach with their surfboards" />
-        <div class="anniversary-stamp" aria-label="20 years of Elemental UK, 2006 to 2026">
-          <img src="https://elementalsurflodge.com/wp-content/uploads/2026/03/20th-Anniversary-logo.png" alt="20 years of Elemental UK, 2006 to 2026" />
+      <div class="hero-art" aria-label="Lodge at Fistral Beach">
+        <img class="hero-photo" src="https://elementalsurflodge.com/wp-content/uploads/2026/05/square.jpeg" alt="Elemental Surf Lodge at Fistral Beach" />
+        <div class="anniversary-stamp" aria-label="20 years of Elemental UK">
+          <img src="https://elementalsurflodge.com/wp-content/uploads/2026/03/20th-Anniversary-logo.png" alt="20 years of Elemental UK 2006 to 2026" />
         </div>
         <div class="corner-tag">Partner &middot; 2026</div>
         <div class="event-card">
           <div class="e-label">UK Surf &amp; Skate Expo</div>
           <div class="e-dates">24<span class="e-month">·</span>25<span class="e-month">·</span>26</div>
-          <div class="e-month" style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;">July 2026</div>
+          <div class="e-month" style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);">July 2026</div>
           <div class="e-loc">Newquay Sports Centre &middot; TR7&nbsp;2SL</div>
         </div>
       </div>
@@ -826,11 +438,11 @@
   </div>
 </section>
 
-<!-- ─── Partnership statement ─────────────────────────────────── -->
+<!-- Partnership statement -->
 <section class="partnership">
   <div class="wrap">
     <div class="pship-mark lodge">
-      <img src="https://elementalsurflodge.com/wp-content/themes/elemental-surf-lodge-custom/assets/images/logo.png" alt="Elemental Surf Lodge" class="pship-logo" />
+      <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/Elemental-Surf-Lodge-Logo-square.png" alt="Elemental Surf Lodge" class="pship-logo" />
     </div>
     <div class="pship-line">
       <span class="label">Official Partner</span>
@@ -843,10 +455,10 @@
   </div>
 </section>
 
-<!-- ─── Photo strip · Expo ───────────────────────────────────────── -->
-<div class="photo-strip" aria-label="Scenes from the UK Surf &amp; Skate Expo">
+<!-- Photo strip · Expo -->
+<div class="photo-strip">
   <div class="photo">
-    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/surfskateexpo_Best-trick-2.jpg" alt="Skater airborne at Concrete Waves during the UK Surf &amp; Skate Expo" />
+    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/surfskateexpo_Best-trick-2.jpg" alt="Skater airborne at Concrete Waves during the UK Surf and Skate Expo" />
     <div class="caption">Concrete Waves<small>The Expo skate park</small></div>
   </div>
   <div class="photo">
@@ -854,13 +466,13 @@
     <div class="caption">Great Western<small>Expo surf comp</small></div>
   </div>
   <div class="photo">
-    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/surfskateexpo_BestTRICK-4.jpg" alt="Skater ollieing over an obstacle at Concrete Waves" />
+    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/surfskateexpo_BestTRICK-4.jpg" alt="Skater at Concrete Waves Best Trick" />
     <div class="caption">Concrete Waves<small>Best Trick</small></div>
   </div>
 </div>
 
-<!-- ─── About the Expo ────────────────────────────────────────── -->
-<section class="expo" id="about-expo">
+<!-- About the Expo -->
+<section class="expo-section" id="about-expo">
   <div class="wrap">
     <div class="section-head">
       <div class="title-stack">
@@ -879,8 +491,7 @@
         <p>
           Across three venues, a 7,000&thinsp;m&sup2; Expo Village with a purpose built skate
           park, an 800 seat Expo Hall presented by YETI, and the town&rsquo;s beaches and bowls,
-          the weekend gathers the brands, athletes, filmmakers and riders who shape the
-          culture in the UK.
+          the weekend gathers the brands, athletes, filmmakers and riders who shape the culture in the UK.
         </p>
         <p>
           Free to wander, ticketed for the talks, films and awards. The expo runs Friday
@@ -903,7 +514,6 @@
         </ul>
       </div>
       <div class="e-card">
-        <div class="e-card-corner"></div>
         <div class="ix">02 / Expo Hall</div>
         <h3>YETI Stage</h3>
         <p>Three stages, 25+ talks, panels and fireside chats with the speakers, athletes and
@@ -953,7 +563,7 @@
   </div>
 </section>
 
-<!-- ─── Why stay at the Lodge ─────────────────────────────────── -->
+<!-- Why stay -->
 <section class="why">
   <div class="wrap">
     <div class="section-head">
@@ -974,8 +584,7 @@
         <div class="num">01 / Community</div>
         <h3>Housemates, not guests</h3>
         <p>You&rsquo;ll be sharing breakfast with skaters, longboarders, foilers and first time riders
-        from across the UK and beyond. Conversations carry over from the Expo and into the lodge
-        kitchen.</p>
+        from across the UK and beyond. Conversations carry over from the Expo and into the lodge kitchen.</p>
       </div>
       <div class="value">
         <div class="num">02 / Built for boards</div>
@@ -1005,26 +614,25 @@
         <div class="num">06 / Fuel</div>
         <h3>Tea, toast, tide chart</h3>
         <p>The basics, done well. Tea, coffee, toast, cereal and yogurt every morning.
-        Honest fuel before the Expo Village opens at 9. Tide times and swell report up
-        on the kitchen wall.</p>
+        Honest fuel before the Expo Village opens at 9. Tide times and swell report up on the kitchen wall.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── Photo strip · Lodge ─────────────────────────────────────── -->
-<div class="photo-strip" aria-label="The lodge at Fistral Beach">
+<!-- Photo strip · Lodge -->
+<div class="photo-strip two-col">
   <div class="photo">
-    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/square.jpeg" alt="Guests paddling out at Fistral Beach" />
-    <div class="caption">Fistral Beach<small>Paddle out</small></div>
+    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/square.jpeg" alt="Elemental Surf Lodge at Fistral Beach" />
+    <div class="caption">Fistral Beach<small>The lodge</small></div>
   </div>
   <div class="photo">
-    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/IMG_4254-scaled.jpeg" alt="Surfer airborne at Fistral Beach" />
-    <div class="caption">Fistral Beach<small>Air section</small></div>
+    <img src="https://elementalsurflodge.com/wp-content/uploads/2026/05/IMG_4254-scaled.jpeg" alt="Surfing at Fistral Beach" />
+    <div class="caption">Fistral Beach<small>Morning session</small></div>
   </div>
 </div>
 
-<!-- ─── Distance / transport ──────────────────────────────────── -->
+<!-- Distance and transport -->
 <section class="transport">
   <div class="wrap">
     <div class="section-head">
@@ -1040,31 +648,14 @@
     </div>
 
     <div class="transport-grid">
-      <div class="map-card" aria-label="Map of Newquay showing the lodge and the Expo Village">
-        <div class="map-bg"></div>
-        <div class="coast"></div>
-
-        <span class="map-label" style="top:14px;left:18px;">[ Map placeholder · Newquay ]</span>
-        <span class="map-label" style="bottom:14px;right:18px;">N&nbsp;↑</span>
-
-        <span class="map-label" style="top:38%; left:8%;">Atlantic</span>
-        <span class="map-label" style="bottom:14%; right:12%;">A392</span>
-
-        <div class="map-pin lodge" style="top:52%; left:38%;">
-          <span class="dot"></span> Lodge
-        </div>
-        <div class="map-pin"       style="top:32%; left:62%;">
-          <span class="dot"></span> Expo Village
-        </div>
-        <div class="map-pin"       style="top:70%; left:24%;">
-          <span class="dot"></span> Towan Beach
-        </div>
-        <div class="map-pin"       style="top:80%; left:58%;">
-          <span class="dot"></span> Concrete Waves
-        </div>
-        <div class="map-pin"       style="top:48%; left:18%;">
-          <span class="dot"></span> Fistral
-        </div>
+      <div class="map-card">
+        <iframe
+          src="https://maps.google.com/maps?q=Newquay+Sports+Centre,+Newquay,+Cornwall,+TR7+2SL&output=embed&z=15"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Newquay Sports Centre, home of the UK Surf and Skate Expo 2026">
+        </iframe>
       </div>
 
       <div>
@@ -1123,7 +714,7 @@
   </div>
 </section>
 
-<!-- ─── CTA band ──────────────────────────────────────────────── -->
+<!-- CTA band -->
 <section class="cta-band">
   <div class="wrap">
     <div class="eyebrow">Limited rooms for the Expo weekend</div>
@@ -1136,7 +727,7 @@
   </div>
 </section>
 
-<!-- ─── Booking ───────────────────────────────────────────────── -->
+<!-- Booking -->
 <section class="booking" id="book">
   <div class="wrap">
     <div class="booking-cta">
@@ -1159,6 +750,6 @@
   </div>
 </section>
 
-
+</div><!-- end .esl-expo -->
 </body>
 </html>
