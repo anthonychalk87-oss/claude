@@ -258,10 +258,9 @@
 .esl-expo .why { background: var(--navy); color: var(--white); border-top: 4px solid var(--accent); }
 .esl-expo .why .section-head h2 { color: var(--white); }
 .esl-expo .why .section-head p { color: rgba(255,255,255,0.7); max-width: 56ch; font-size: 16px; }
-.esl-expo .why .section-head { align-items: stretch; }
-.esl-expo .why-logo-block { display: flex; flex-direction: column; align-items: center; min-width: 260px; padding: 0 32px; }
-.esl-expo .why-logo-block .meta { opacity: 0.55; }
-.esl-expo .why-logo-img { display: block; width: 220px; height: auto; filter: brightness(0) invert(1); opacity: 0.9; margin-top: 24px; margin-bottom: auto; }
+.esl-expo .why .section-head { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: stretch; margin-bottom: 0; }
+.esl-expo .why-logo-block { display: flex; align-items: center; justify-content: center; padding: 0 16px; }
+.esl-expo .why-logo-img { display: block; width: 220px; height: auto; filter: brightness(0) invert(1); opacity: 0.9; }
 .esl-expo .why .meta { color: rgba(255,255,255,0.4); }
 .esl-expo .values {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -392,7 +391,8 @@
   .esl-expo .values { grid-template-columns: 1fr; }
   .esl-expo .transport-grid { grid-template-columns: 1fr; gap: 36px; }
   .esl-expo .map-card { height: 360px; }
-  .esl-expo .why-logo-block { align-items: center; padding: 0; min-width: 0; width: 100%; }
+  .esl-expo .why .section-head { grid-template-columns: 1fr; }
+  .esl-expo .why-logo-block { justify-content: center; padding: 24px 0; }
   .esl-expo .partnership .wrap { grid-template-columns: 1fr; gap: 24px; justify-items: center; text-align: center; }
   .esl-expo .transport-extras ul { grid-template-columns: 1fr; }
   .esl-expo .photo-strip { grid-template-columns: 1fr 1fr; }
@@ -586,7 +586,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="title-stack">
-        <div class="eyebrow">Why stay with us <span class="dot"></span> Values we share</div>
+        <div class="eyebrow">Why stay with us <span class="dot"></span> Values we share <span class="dot"></span> 06 / Reasons</div>
         <h2>A lodge built for the people the Expo is built for.</h2>
         <p style="margin-top:18px;">
           The Expo brings surf and skate together for a weekend. We do it every week of the year.
@@ -595,7 +595,6 @@
         </p>
       </div>
       <div class="why-logo-block">
-        <div class="meta">06 / Reasons</div>
         <img src="https://elementalsurflodge.com/wp-content/themes/elemental-surf-lodge-custom/assets/images/Surf Academy logo.svg" alt="Elemental Surf Lodge" class="why-logo-img" />
       </div>
     </div>
