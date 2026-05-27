@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Group Accommodation · Elemental Surf Lodge, Newquay</title>
+
+<!--
+  Elemental Surf Lodge. Group Accommodation page.
+  Hard HTML for a Beaver Builder HTML module.
+  Scoped to .esl-groups. House style v1 · 2026.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700;900&display=swap" />
+
+<style>
+:root {
+  --navy: #0f172a;
+  --navy-2: #1e293b;
+  --navy-3: #111a2e;
+  --amber: #eab308;
+  --yellow: #facc15;
+  --olive: #b5c468;
+  --warm-grey: #f4f3f1;
+  --charcoal: #353b40;
+  --white: #ffffff;
+  --border: rgba(15,23,42,0.08);
+  --border-dark: rgba(255,255,255,0.10);
+  --accent: var(--amber);
+  --cta-radius: 9999px;
+  --cta-padding: 13px 26px;
+  --cta-border-width: 2px;
+}
+
+/* ============================ BASE ============================ */
+.esl-groups *, .esl-groups *::before, .esl-groups *::after { box-sizing: border-box; }
+.esl-groups {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.6;
+  background: var(--warm-grey);
+  -webkit-font-smoothing: antialiased;
+}
+.esl-groups img { max-width: 100%; display: block; }
+.esl-groups a { color: inherit; text-decoration: none; }
+.esl-groups p { margin: 0 0 1em; }
+.esl-groups code, .esl-groups .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+.esl-groups h1, .esl-groups h2, .esl-groups h3, .esl-groups h4 {
+  font-weight: 900; letter-spacing: -0.01em; line-height: 1.05; margin: 0;
+  color: var(--navy);
+}
+.esl-groups h1 { font-size: clamp(40px, 6.4vw, 88px); text-transform: uppercase; }
+.esl-groups h2 { font-size: clamp(34px, 5.2vw, 72px); text-transform: uppercase; }
+.esl-groups h3 { font-size: 22px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.esl-groups h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+
+.esl-groups .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.esl-groups section { padding: 96px 0; }
+
+.esl-groups .eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.esl-groups .eyebrow .dot {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent);
+}
+
+.esl-groups .lede { font-size: 17px; line-height: 1.7; max-width: 64ch; font-weight: 300; }
+
+.esl-groups .section-head {
+  display: grid; grid-template-columns: 2fr 1fr; gap: 32px;
+  align-items: start; margin-bottom: 56px;
+}
+.esl-groups .section-head h2 { margin-top: 14px; }
+.esl-groups .section-head .lede { margin-top: 18px; }
+.esl-groups .section-head .meta {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--charcoal); opacity: 0.55; text-align: right;
+}
+
+/* ============================ BUTTONS ============================ */
+.esl-groups .btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: 700 12px/1 'Montserrat', sans-serif;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: var(--cta-padding); border-radius: var(--cta-radius);
+  background: transparent; color: var(--accent);
+  border: var(--cta-border-width) solid var(--accent);
+  cursor: pointer; transition: .15s ease;
+  white-space: nowrap;
+}
+.esl-groups .btn:hover { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+.esl-groups .btn--ghost { color: rgba(255,255,255,0.92); border-color: rgba(255,255,255,0.45); }
+.esl-groups .btn--ghost:hover { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+.esl-groups .btn--solid { background: var(--amber); color: var(--navy); }
+.esl-groups .btn--solid:hover { background: var(--yellow); border-color: var(--yellow); }
+
+/* ============================ HERO ============================ */
+.esl-groups .hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 120px 0 0;
+  border-bottom: 4px solid var(--accent);
+}
+.esl-groups .hero h1 { color: var(--white); }
+.esl-groups .hero h1 .accent { color: var(--accent); }
+.esl-groups .hero .sub {
+  font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.78);
+  max-width: 52ch; margin: 24px 0 36px; font-weight: 300;
+}
+.esl-groups .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.esl-groups .hero-grid {
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: end;
+  padding-bottom: 80px;
+}
+.esl-groups .hero-art {
+  background: linear-gradient(180deg, #1e293b 0%, #0b1224 100%);
+  border: 0.5px solid var(--border-dark);
+  border-radius: 14px;
+  padding: 26px;
+  position: relative;
+  aspect-ratio: 4 / 5;
+}
+.esl-groups .hero-art .corner-tag {
+  position: absolute; top: 22px; left: 22px; z-index: 3;
+  background: var(--accent); color: var(--navy);
+  padding: 8px 12px; font-size: 10px; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.esl-groups .hero-art .anniversary {
+  position: absolute; top: -32px; right: -32px; z-index: 3;
+  width: 150px; height: 150px; border-radius: 50%;
+  overflow: hidden; transform: rotate(-9deg);
+  background: var(--white);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+.esl-groups .hero-art .anniversary img { width: 100%; height: 100%; object-fit: cover; }
+.esl-groups .hero-art .hero-photo {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 8px;
+  position: absolute; inset: 26px;
+  width: calc(100% - 52px); height: calc(100% - 52px);
+}
+
+/* MARQUEE */
+.esl-groups .hero-marquee {
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 4px solid var(--accent);
+  background: var(--navy-3);
+  overflow: hidden; white-space: nowrap;
+}
+.esl-groups .hero-marquee .track {
+  display: inline-flex; gap: 56px; padding: 22px 0;
+  animation: esl-groups-marquee 38s linear infinite;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(255,255,255,0.85);
+}
+.esl-groups .hero-marquee .track span { display: inline-flex; align-items: center; gap: 56px; padding-right: 56px; }
+.esl-groups .hero-marquee .track i {
+  display: inline-block; width: 8px; height: 8px;
+  background: var(--accent); border-radius: 50%; font-style: normal;
+}
+@keyframes esl-groups-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================ INTRO ============================ */
+.esl-groups .intro { background: var(--white); }
+.esl-groups .intro-grid {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start;
+}
+.esl-groups .intro-grid p { font-size: 16px; line-height: 1.75; color: var(--charcoal); }
+.esl-groups .intro-grid p.lead { font-size: 18px; font-weight: 300; color: var(--navy); }
+.esl-groups .intro-side {
+  background: var(--warm-grey);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 32px;
+}
+.esl-groups .intro-side h4 { margin-bottom: 18px; }
+.esl-groups .intro-side ul { list-style: none; padding: 0; margin: 0; }
+.esl-groups .intro-side li {
+  font-size: 13px; padding: 12px 0; border-bottom: 1px dashed var(--border);
+  display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline;
+}
+.esl-groups .intro-side li:last-child { border-bottom: none; }
+.esl-groups .intro-side li .k { color: var(--charcoal); font-weight: 300; }
+.esl-groups .intro-side li .v {
+  font-family: ui-monospace, monospace; font-size: 11px;
+  color: var(--accent); font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ============================ PHOTO STRIP ============================ */
+.esl-groups .photo-strip {
+  background: var(--navy);
+  border-top: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent);
+  padding: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.esl-groups .photo-strip .photo {
+  position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--navy-2);
+}
+.esl-groups .photo-strip .photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s ease;
+}
+.esl-groups .photo-strip .photo:hover img { transform: scale(1.03); }
+.esl-groups .photo-strip .caption {
+  position: absolute; left: 16px; bottom: 16px;
+  padding-left: 12px; border-left: 2px solid var(--accent);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--white); line-height: 1.4;
+}
+.esl-groups .photo-strip .caption small {
+  display: block; font-size: 9px; font-weight: 600;
+  color: rgba(255,255,255,0.65); letter-spacing: 0.22em; margin-top: 4px;
+}
+
+/* ============================ CARD GRID ============================ */
+.esl-groups .card-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.esl-groups .e-card {
+  background: var(--white); border: 1px solid var(--border);
+  padding: 32px; transition: .2s ease;
+  display: flex; flex-direction: column;
+}
+.esl-groups .e-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.esl-groups .e-card .ix {
+  font-family: ui-monospace, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 18px;
+}
+.esl-groups .e-card h3 { color: var(--navy); margin-bottom: 14px; }
+.esl-groups .e-card p {
+  font-size: 14px; line-height: 1.65;
+  color: rgba(53,59,64,0.85); flex: 1;
+}
+.esl-groups .e-card .kvs {
+  list-style: none; padding: 0; margin: 18px 0 0;
+  border-top: 1px solid var(--border);
+}
+.esl-groups .e-card .kvs li {
+  font-size: 12px; padding: 9px 0;
+  display: flex; justify-content: space-between; gap: 12px;
+  border-bottom: 1px dashed var(--border);
+}
+.esl-groups .e-card .kvs li:last-child { border-bottom: none; }
+.esl-groups .e-card .kvs li span:first-child { color: rgba(53,59,64,0.7); }
+.esl-groups .e-card .kvs li span:last-child {
+  color: var(--accent); font-weight: 700; font-size: 11px;
+  letter-spacing: 0.04em; text-transform: uppercase; text-align: right;
+}
+.esl-groups .e-card .card-link {
+  margin-top: 18px; display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent);
+  align-self: flex-start;
+}
+.esl-groups .e-card .card-link:hover { color: var(--yellow); }
+
+/* ============================ FACTS STRIP ============================ */
+.esl-groups .facts {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--white); border: 1px solid var(--border);
+}
+.esl-groups .facts > div {
+  padding: 36px 32px;
+  border-right: 1px solid var(--border);
+}
+.esl-groups .facts > div:last-child { border-right: none; }
+.esl-groups .facts .k {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 14px;
+}
+.esl-groups .facts .v {
+  font-size: 28px; font-weight: 900; color: var(--navy);
+  letter-spacing: -0.01em; line-height: 1; margin-bottom: 10px;
+}
+.esl-groups .facts .u {
+  font-size: 12px; color: rgba(53,59,64,0.7); line-height: 1.4;
+}
+
+/* ============================ VALUES (dark grid) ============================ */
+.esl-groups .why { background: var(--navy); color: var(--white); }
+.esl-groups .why h2 { color: var(--white); }
+.esl-groups .why .lede { color: rgba(255,255,255,0.78); }
+.esl-groups .why .section-head .meta { color: rgba(255,255,255,0.5); }
+.esl-groups .values {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.esl-groups .value {
+  background: var(--navy); padding: 36px 32px;
+  min-height: 260px; display: flex; flex-direction: column;
+  transition: background .2s ease;
+}
+.esl-groups .value:hover { background: var(--navy-2); }
+.esl-groups .value .num {
+  font-family: ui-monospace, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 24px;
+}
+.esl-groups .value h3 { color: var(--white); margin-bottom: 14px; }
+.esl-groups .value p {
+  font-size: 14px; line-height: 1.7;
+  color: rgba(255,255,255,0.72);
+}
+
+/* ============================ TRANSPORT / MAP ============================ */
+.esl-groups .where { background: var(--warm-grey); }
+.esl-groups .where-grid {
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: start;
+}
+.esl-groups .map-card {
+  background: var(--white); border: 1px solid var(--border);
+}
+.esl-groups .map-card .map-iframe {
+  width: 100%; height: 500px; border: 0; display: block;
+}
+.esl-groups .map-card .map-bar {
+  padding: 16px 22px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--navy);
+}
+.esl-groups .map-card .map-bar a { color: var(--accent); }
+.esl-groups .map-card .map-bar a:hover { color: var(--navy); }
+.esl-groups .t-list { background: var(--white); border: 1px solid var(--border); }
+.esl-groups .t-item {
+  display: grid; grid-template-columns: 8px 1fr auto auto;
+  gap: 18px; padding: 22px 24px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.esl-groups .t-item:last-child { border-bottom: none; }
+.esl-groups .t-item .star {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border);
+}
+.esl-groups .t-item.is-venue .star { background: var(--accent); box-shadow: 0 0 0 4px rgba(234,179,8,0.18); }
+.esl-groups .t-item .name {
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  letter-spacing: 0.01em; text-transform: uppercase;
+}
+.esl-groups .t-item .name a { color: var(--navy); }
+.esl-groups .t-item .name a:hover { color: var(--accent); }
+.esl-groups .t-item .name small {
+  display: block; font-size: 12px; font-weight: 300; text-transform: none;
+  color: rgba(53,59,64,0.7); letter-spacing: 0; margin-top: 4px;
+}
+.esl-groups .t-item .time {
+  font-size: 18px; font-weight: 900; color: var(--navy);
+  text-align: right; line-height: 1;
+}
+.esl-groups .t-item .time small {
+  display: block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; color: var(--accent);
+  margin-top: 6px; text-transform: uppercase;
+}
+.esl-groups .t-item .mode {
+  font-size: 18px; font-weight: 700; color: var(--accent);
+  width: 28px; text-align: center;
+}
+
+/* ============================ FAQ ============================ */
+.esl-groups .faqs { background: var(--white); }
+.esl-groups .faq-stack {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.esl-groups .faq {
+  border-bottom: 1px solid var(--border);
+}
+.esl-groups .faq:last-child { border-bottom: none; }
+.esl-groups .faq summary {
+  list-style: none; cursor: pointer;
+  padding: 26px 0;
+  display: grid; grid-template-columns: 60px 1fr 28px;
+  gap: 24px; align-items: center;
+  outline: none;
+}
+.esl-groups .faq summary::-webkit-details-marker { display: none; }
+.esl-groups .faq .ix {
+  font-family: ui-monospace, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--accent); text-transform: uppercase;
+}
+.esl-groups .faq .q {
+  font-size: 18px; font-weight: 700; color: var(--navy);
+  letter-spacing: 0.01em; text-transform: uppercase; line-height: 1.3;
+}
+.esl-groups .faq .chev {
+  width: 28px; height: 28px;
+  border: 1.5px solid var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 16px; font-weight: 700;
+  transition: .2s ease; line-height: 1;
+}
+.esl-groups .faq[open] .chev { background: var(--accent); color: var(--navy); transform: rotate(180deg); }
+.esl-groups .faq .a {
+  padding: 0 0 28px 84px;
+  font-size: 15px; line-height: 1.7; color: var(--charcoal);
+  max-width: 78ch;
+}
+.esl-groups .faq .a a { color: var(--accent); border-bottom: 1px solid var(--accent); }
+.esl-groups .faq .a a:hover { color: var(--yellow); border-color: var(--yellow); }
+
+/* ============================ CTA BAND ============================ */
+.esl-groups .cta-band {
+  background: var(--navy-3); color: var(--white);
+  border-top: 4px solid var(--accent); border-bottom: 4px solid var(--accent);
+  padding: 96px 0; text-align: center;
+}
+.esl-groups .cta-band h2 { color: var(--white); max-width: 22ch; margin: 14px auto 20px; }
+.esl-groups .cta-band h2 .accent { color: var(--accent); }
+.esl-groups .cta-band .sub {
+  color: rgba(255,255,255,0.72); font-size: 16px;
+  max-width: 56ch; margin: 0 auto 36px; line-height: 1.7;
+}
+.esl-groups .cta-band .cta-row {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+
+/* ============================ BOOKING CTA ============================ */
+.esl-groups .booking {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.esl-groups .booking-cta {
+  max-width: 640px; margin: 0 auto; text-align: center;
+}
+.esl-groups .booking-cta .eyebrow.on-light { justify-content: center; }
+.esl-groups .booking-cta h2 { margin: 14px 0 22px; }
+.esl-groups .booking-cta p {
+  font-size: 16px; line-height: 1.75;
+  color: var(--charcoal); margin-bottom: 32px;
+}
+.esl-groups .booking-fine {
+  margin-top: 28px; font-size: 12px; color: rgba(53,59,64,0.6);
+  letter-spacing: 0.04em;
+}
+.esl-groups .booking-fine a { color: var(--accent); border-bottom: 1px solid var(--accent); }
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width: 980px) {
+  .esl-groups section { padding: 72px 0; }
+  .esl-groups .hero { padding-top: 88px; }
+  .esl-groups .hero-grid { grid-template-columns: 1fr; gap: 80px; padding-bottom: 64px; }
+  .esl-groups .hero-art { max-width: 480px; aspect-ratio: 1 / 1.1; }
+  .esl-groups .section-head { grid-template-columns: 1fr; }
+  .esl-groups .section-head .meta { text-align: left; }
+  .esl-groups .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .esl-groups .card-grid { grid-template-columns: 1fr 1fr; }
+  .esl-groups .photo-strip { grid-template-columns: 1fr 1fr; }
+  .esl-groups .facts { grid-template-columns: 1fr 1fr; }
+  .esl-groups .facts > div:nth-child(2) { border-right: none; }
+  .esl-groups .facts > div:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .esl-groups .values { grid-template-columns: 1fr 1fr; }
+  .esl-groups .where-grid { grid-template-columns: 1fr; gap: 32px; }
+  .esl-groups .map-card .map-iframe { height: 360px; }
+}
+@media (max-width: 560px) {
+  .esl-groups .wrap { padding: 0 20px; }
+  .esl-groups .hero { padding-top: 64px; }
+  .esl-groups .hero-grid { gap: 60px; }
+  .esl-groups .hero-art .anniversary { width: 110px; height: 110px; top: -20px; right: -10px; }
+  .esl-groups .card-grid { grid-template-columns: 1fr; }
+  .esl-groups .photo-strip { grid-template-columns: 1fr 1fr; }
+  .esl-groups .photo-strip .photo:nth-child(3) { display: none; }
+  .esl-groups .facts { grid-template-columns: 1fr; }
+  .esl-groups .facts > div { border-right: none; border-bottom: 1px solid var(--border); }
+  .esl-groups .facts > div:last-child { border-bottom: none; }
+  .esl-groups .values { grid-template-columns: 1fr; }
+  .esl-groups .t-item { grid-template-columns: 8px 1fr auto; }
+  .esl-groups .t-item .mode { display: none; }
+  .esl-groups .faq summary { grid-template-columns: 1fr 28px; gap: 16px; }
+  .esl-groups .faq .ix { display: none; }
+  .esl-groups .faq .a { padding-left: 0; }
+  .esl-groups .hero-marquee .track { font-size: 12px; letter-spacing: 0.22em; }
+}
+</style>
+</head>
+
+<body>
+<div class="esl-groups">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Group accommodation <span class="dot"></span> Newquay · Cornwall</div>
+          <h1 style="margin-top: 22px;">
+            <span class="accent">Group stays</span><br>
+            at the lodge.
+          </h1>
+          <p class="sub">
+            School residentials, university surf trips, stag and hen weekends, retreats and private group getaways. A short walk from Fistral, with our surf academy next door.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn--solid" href="https://elementalsurflodge.com/contact/">Make a group enquiry <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#rooms">See the rooms</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="corner-tag">House guests · since 2006</div>
+          <div class="anniversary" aria-label="20 years of Elemental UK">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2026/03/20th-Anniversary-logo.png" alt="20 Years of Elemental UK, 2006 to 2026" />
+          </div>
+          <img class="hero-photo" src="https://elementalsurflodge.com/wp-content/uploads/2024/12/4J8A3546-scaled.jpg" alt="Group rooms at Elemental Surf Lodge, Newquay" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="track">
+        <span>Schools <i></i> Universities <i></i> Stag &amp; Hen <i></i> Retreats <i></i> Families <i></i> Clubs <i></i> Since 2006 <i></i></span>
+        <span>Schools <i></i> Universities <i></i> Stag &amp; Hen <i></i> Retreats <i></i> Families <i></i> Clubs <i></i> Since 2006 <i></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ INTRO ============================ -->
+  <section class="intro">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 / The lodge <span class="dot"></span> Built for groups</div>
+          <h2>Your lodge,<br>your adventure.</h2>
+        </div>
+        <div class="meta">Tower Road · Newquay TR7 1LX</div>
+      </div>
+
+      <div class="intro-grid">
+        <div>
+          <p class="lead">
+            Whether you&rsquo;re planning a school residential, a surf retreat, a stag or hen do, a uni trip or a private getaway, the lodge has the space, the facilities and the location to make it work.
+          </p>
+          <p>
+            Our group rooms mix doubles, singles and bunks to fit any party size. Every guest shares the dining room and lounge, so your group still comes together at breakfast, after the surf, and on the way out the door in the morning.
+          </p>
+          <p>
+            We sit between Towan and Fistral, with Elemental Surf Academy on the doorstep. There isn&rsquo;t a better base for a group trip in Cornwall. We&rsquo;ve been hosting them for twenty years and we know what works.
+          </p>
+        </div>
+        <aside class="intro-side">
+          <h4>At a glance</h4>
+          <ul>
+            <li><span class="k">Location</span><span class="v">Tower Rd, TR7 1LX</span></li>
+            <li><span class="k">Walk to Fistral</span><span class="v">10 min</span></li>
+            <li><span class="k">Walk to Towan</span><span class="v">8 min</span></li>
+            <li><span class="k">Train station</span><span class="v">20 min walk</span></li>
+            <li><span class="k">Surf academy</span><span class="v">On site</span></li>
+            <li><span class="k">Bookings</span><span class="v">+44 1637 808 800</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PHOTO STRIP ============================ -->
+  <div class="photo-strip">
+    <div class="photo">
+      <img src="https://elementalsurflodge.com/wp-content/uploads/2024/12/4J8A3579-scaled.jpg" alt="Group room interior at the lodge" />
+      <div class="caption">Group rooms<small>2 to 6 guests</small></div>
+    </div>
+    <div class="photo">
+      <img src="https://elementalsurflodge.com/wp-content/uploads/2024/12/4J8A3546-scaled.jpg" alt="Communal dining and lounge area" />
+      <div class="caption">Shared lounge<small>The heart of the lodge</small></div>
+    </div>
+    <div class="photo">
+      <img src="https://elementalsurflodge.com/wp-content/uploads/2024/12/4J8A3579-scaled.jpg" alt="Surf school next door to the lodge" />
+      <div class="caption">Surf academy<small>Steps from the front door</small></div>
+    </div>
+  </div>
+
+  <!-- ============================ WHO WE WELCOME ============================ -->
+  <section style="background: var(--warm-grey);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">02 / Who stays <span class="dot"></span> All kinds of groups</div>
+          <h2>Six groups<br>we know inside out.</h2>
+          <p class="lede">
+            We&rsquo;ve hosted just about every kind of group trip there is. Whatever shape yours takes, we&rsquo;ve done one like it before.
+          </p>
+        </div>
+        <div class="meta">Established 2006 · 20 years</div>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="e-card">
+          <div class="ix">01 / Schools</div>
+          <h3>School residentials</h3>
+          <p>Year 6 to Year 11, from across the UK. Twenty years hosting school groups. We know what teachers, students and parents need from a Cornwall residential.</p>
+          <ul class="kvs">
+            <li><span>Ages</span><span>10 to 16</span></li>
+            <li><span>Programme</span><span>Full board option</span></li>
+          </ul>
+          <a class="card-link" href="https://elementaluk.com/cornish-summer-adventure/">Find out more →</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">02 / University</div>
+          <h3>University surf trips</h3>
+          <p>The ultimate uni surf club base. Good value beds, the academy on site, communal spaces to socialise and Newquay&rsquo;s town centre on the doorstep.</p>
+          <ul class="kvs">
+            <li><span>Typical stay</span><span>3 to 4 nights</span></li>
+            <li><span>Surf lessons</span><span>Discounted</span></li>
+          </ul>
+          <a class="card-link" href="https://elementalsurflodge.com/university-surf-trip/">Find out more →</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">03 / Stag &amp; Hen</div>
+          <h3>Stag and hen parties</h3>
+          <p>A proper surf send off. Book the lodge for your group, hit the waves during the day and walk into town in the evening. No taxis needed.</p>
+          <ul class="kvs">
+            <li><span>Group size</span><span>From 8 guests</span></li>
+            <li><span>Bar &amp; pubs</span><span>8 min walk</span></li>
+          </ul>
+          <a class="card-link" href="https://elementalsurflodge.com/contact/">Get in touch →</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">04 / Retreats</div>
+          <h3>Surf retreats</h3>
+          <p>Dedicated coaching, honest rooms, Fistral on the doorstep. The clean setup for a group that wants to properly disappear into surfing for a week.</p>
+          <ul class="kvs">
+            <li><span>Coaching</span><span>All levels</span></li>
+            <li><span>Board hire</span><span>Lodge rate</span></li>
+          </ul>
+          <a class="card-link" href="https://elementalsurflodge.com/surf-lessons/">View surf lessons →</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">05 / Families</div>
+          <h3>Family weekends</h3>
+          <p>Bring the whole lot. Our rooms cover mixed ages and group sizes and the lodge has everything you need to relax, surf, explore and head home tired.</p>
+          <ul class="kvs">
+            <li><span>Cots</span><span>On request</span></li>
+            <li><span>Beach</span><span>3 min walk</span></li>
+          </ul>
+          <a class="card-link" href="https://elementalsurflodge.com/contact/">Get in touch →</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">06 / Private</div>
+          <h3>Private group trips</h3>
+          <p>Friends, colleagues, clubs, societies. If you need quality group accommodation in Newquay with character and a real location, this is the address.</p>
+          <ul class="kvs">
+            <li><span>Whole-lodge</span><span>By request</span></li>
+            <li><span>Catering</span><span>Bespoke</span></li>
+          </ul>
+          <a class="card-link" href="https://elementalsurflodge.com/contact/">Get in touch →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FACTS ============================ -->
+  <section style="background: var(--white);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">03 / By the numbers <span class="dot"></span> What you get</div>
+          <h2>20 · 10 · 7 · 1.</h2>
+          <p class="lede">
+            A short list of the things that actually matter when you&rsquo;re booking a group trip.
+          </p>
+        </div>
+        <div class="meta">All figures honest</div>
+      </div>
+
+      <div class="facts">
+        <div>
+          <div class="k">Years hosting experience</div>
+          <div class="v">20+</div>
+          <div class="u">School residentials since 2006</div>
+        </div>
+        <div>
+          <div class="k">Minutes to Fistral</div>
+          <div class="v">10</div>
+          <div class="u">A walk, not a drive</div>
+        </div>
+        <div>
+          <div class="k">Room types</div>
+          <div class="v">7</div>
+          <div class="u">Twin · Double · Quad · Six</div>
+        </div>
+        <div>
+          <div class="k">Surf school on site</div>
+          <div class="v">1</div>
+          <div class="u">Elemental Surf Academy, next door</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ROOMS ============================ -->
+  <section id="rooms" style="background: var(--warm-grey);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">04 / The rooms <span class="dot"></span> Something for every group</div>
+          <h2>Seven layouts.<br>One simple booking.</h2>
+          <p class="lede">
+            Most rooms are en suite. All have WiFi and tea and coffee. Every guest shares the dining room and lounge.
+          </p>
+        </div>
+        <div class="meta">Mix and match across the group</div>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="e-card">
+          <div class="ix">01 / Twin</div>
+          <h3>Twin room</h3>
+          <p>Two single beds, en suite shower, sea view from select rooms. The everyday workhorse of the lodge.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>2</span></li>
+            <li><span>Bathroom</span><span>En suite</span></li>
+            <li><span>View</span><span>Sea</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">02 / Double</div>
+          <h3>Double room</h3>
+          <p>One double bed, en suite shower. Quiet, simple, comfortable. For couples travelling with the group.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>2</span></li>
+            <li><span>Bathroom</span><span>En suite</span></li>
+            <li><span>Bed</span><span>Double</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">03 / Budget twin</div>
+          <h3>Budget twin</h3>
+          <p>Two singles with a shared bathroom down the hall. Best value in the lodge, popular with student groups.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>2</span></li>
+            <li><span>Bathroom</span><span>Shared</span></li>
+            <li><span>Value</span><span>Best</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">04 / Triple</div>
+          <h3>Triple room</h3>
+          <p>One single bed and one bunk bed, en suite shower, sea view. A neat fit for a three.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>3</span></li>
+            <li><span>Bathroom</span><span>En suite</span></li>
+            <li><span>View</span><span>Sea</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">05 / Quad</div>
+          <h3>Quad room</h3>
+          <p>Two bunk beds, private bathroom, sea view. The school group classic, and a great one for four mates.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>4</span></li>
+            <li><span>Bathroom</span><span>Private</span></li>
+            <li><span>View</span><span>Sea</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">06 / Large quad</div>
+          <h3>Large quad</h3>
+          <p>Two bunk beds in a more generous room, en suite shower. More floor space for kit and clothes.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>4</span></li>
+            <li><span>Bathroom</span><span>En suite</span></li>
+            <li><span>Floor</span><span>Spacious</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card" style="grid-column: span 1;">
+          <div class="ix">07 / Six</div>
+          <h3>Six-person room</h3>
+          <p>Three bunk beds, en suite shower. The biggest room in the house, built for sharing.</p>
+          <ul class="kvs">
+            <li><span>Sleeps</span><span>6</span></li>
+            <li><span>Bathroom</span><span>En suite</span></li>
+            <li><span>Best for</span><span>Large groups</span></li>
+          </ul>
+        </article>
+
+        <article class="e-card" style="grid-column: span 2; background: var(--navy); border-color: var(--navy); color: rgba(255,255,255,0.85); justify-content: center;">
+          <div class="ix">All rooms</div>
+          <h3 style="color: var(--white);">See every room in detail.</h3>
+          <p style="color: rgba(255,255,255,0.72);">Full room by room breakdown. Photos, configurations and what&rsquo;s included on the rooms page.</p>
+          <a class="btn btn--ghost" style="margin-top: 18px; align-self: flex-start;" href="https://elementalsurflodge.com/rooms/">View all rooms →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FACILITIES (dark values grid) ============================ -->
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">05 / Facilities <span class="dot"></span> Everything your group needs</div>
+          <h2>Six things<br>that make it work.</h2>
+          <p class="lede">
+            No spa, no concierge, no nonsense. Just the things a surf trip actually needs, and the things a group trip can&rsquo;t do without.
+          </p>
+        </div>
+        <div class="meta">Included for every guest</div>
+      </div>
+
+      <div class="values">
+
+        <div class="value">
+          <div class="num">01 / Together</div>
+          <h3>Communal dining &amp; lounge</h3>
+          <p>One big shared room where the group eats, briefs, plays cards and winds down. Mealtimes happen here. So does most of the trip.</p>
+        </div>
+
+        <div class="value">
+          <div class="num">02 / On site</div>
+          <h3>Elemental Surf Academy</h3>
+          <p>The academy is next door, not down the road. Lodge guests get discounted lessons and board hire. No need to go anywhere else to surf.</p>
+        </div>
+
+        <div class="value">
+          <div class="num">03 / Indoors</div>
+          <h3>Games room</h3>
+          <p>Pool table, board games and somewhere to be when the rain comes in. A favourite with school groups and uni trips alike.</p>
+        </div>
+
+        <div class="value">
+          <div class="num">04 / After the surf</div>
+          <h3>Drying &amp; storage</h3>
+          <p>Proper wetsuit drying area and lockable board storage. Bring the boards. They have a home.</p>
+        </div>
+
+        <div class="value">
+          <div class="num">05 / Location</div>
+          <h3>Between two beaches</h3>
+          <p>Tower Road sits between Towan and Fistral. Ten minutes on foot to world famous Fistral, eight to Towan, twenty to the train station.</p>
+        </div>
+
+        <div class="value">
+          <div class="num">06 / Practical</div>
+          <h3>WiFi, tea &amp; coffee</h3>
+          <p>Free WiFi throughout. Tea and coffee in every room. Hot showers, warm rooms, clean beds. The things that quietly matter.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHERE / MAP + TRANSPORT ============================ -->
+  <section class="where">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">06 / Getting around <span class="dot"></span> On foot, mostly</div>
+          <h2>Tower Road,<br>between two beaches.</h2>
+          <p class="lede">
+            Everything you need is walking distance. The lodge sits between Towan and Fistral, and most of Newquay is a quarter-hour stroll.
+          </p>
+        </div>
+        <div class="meta">61 to 63 Tower Road, TR7 1LX</div>
+      </div>
+
+      <div class="where-grid">
+        <div class="map-card">
+          <iframe class="map-iframe"
+                  src="https://maps.google.com/maps?q=61-63%20Tower%20Road%2C%20Newquay%2C%20TR7%201LX&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Elemental Surf Lodge on Google Maps"></iframe>
+          <div class="map-bar">
+            <span>Map · Newquay</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=61-63+Tower+Road+Newquay+TR7+1LX" target="_blank" rel="noopener">Open in Google Maps →</a>
+          </div>
+        </div>
+
+        <div class="t-list">
+          <div class="t-item is-venue">
+            <div class="star"></div>
+            <div class="name">
+              <a href="https://www.google.com/maps/search/?api=1&query=61-63+Tower+Road+Newquay+TR7+1LX" target="_blank" rel="noopener">
+                Elemental Surf Lodge
+                <small>Tower Road · the front door</small>
+              </a>
+            </div>
+            <div class="time">Here<small>The lodge</small></div>
+            <div class="mode">★</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">
+              <a href="https://www.google.com/maps/search/?api=1&query=Fistral+Beach+Newquay" target="_blank" rel="noopener">
+                Fistral Beach
+                <small>World-class surf, world-famous beach</small>
+              </a>
+            </div>
+            <div class="time">10 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">
+              <a href="https://www.google.com/maps/search/?api=1&query=Towan+Beach+Newquay" target="_blank" rel="noopener">
+                Towan Beach
+                <small>Town beach, lodge surf check</small>
+              </a>
+            </div>
+            <div class="time">8 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">
+              <a href="https://www.google.com/maps/search/?api=1&query=Great+Western+Beach+Newquay" target="_blank" rel="noopener">
+                Great Western Beach
+                <small>Quieter surf, a short walk east</small>
+              </a>
+            </div>
+            <div class="time">20 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">
+              <a href="https://www.google.com/maps/search/?api=1&query=Newquay+Railway+Station" target="_blank" rel="noopener">
+                Newquay Train Station
+                <small>Direct trains from Par &amp; the mainline</small>
+              </a>
+            </div>
+            <div class="time">20 min<small>Walk</small></div>
+            <div class="mode">→</div>
+          </div>
+          <div class="t-item">
+            <div class="star"></div>
+            <div class="name">
+              <a href="https://www.google.com/maps/search/?api=1&query=Cornwall+Airport+Newquay" target="_blank" rel="noopener">
+                Newquay Airport (NQY)
+                <small>Connections to London, Manchester, Dublin, Lisbon</small>
+              </a>
+            </div>
+            <div class="time">15 min<small>Drive</small></div>
+            <div class="mode">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="faqs">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">07 / FAQ <span class="dot"></span> The questions we get</div>
+          <h2>Group booking,<br>short answers.</h2>
+        </div>
+        <div class="meta">Anything else · drop us a line</div>
+      </div>
+
+      <div class="faq-stack">
+
+        <details class="faq" open>
+          <summary>
+            <span class="ix">01</span>
+            <span class="q">What is the maximum group size?</span>
+            <span class="chev" aria-hidden="true">↓</span>
+          </summary>
+          <div class="a">
+            <p>Group sizes vary by season and room mix. Contact us with your dates and headcount and we&rsquo;ll come back with the right configuration, plus a whole lodge price if your group is big enough to take the building.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="ix">02</span>
+            <span class="q">Do you offer group discounts?</span>
+            <span class="chev" aria-hidden="true">↓</span>
+          </summary>
+          <div class="a">
+            <p>Every lodge guest gets discounted surf lessons and board hire at the academy next door. For larger group bookings we&rsquo;ll put together a bespoke package covering accommodation, sessions and any meals you want included.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="ix">03</span>
+            <span class="q">Can you take school groups?</span>
+            <span class="chev" aria-hidden="true">↓</span>
+          </summary>
+          <div class="a">
+            <p>Yes. We&rsquo;ve been hosting school residentials for twenty years. Our parent company Elemental UK handles the full programme. Accommodation, activities, logistics. Teachers turn up with the kids and we look after the rest. <a href="https://elementaluk.com/cornish-summer-adventure/">School programmes are here.</a></p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="ix">04</span>
+            <span class="q">Is the surf school included in a group booking?</span>
+            <span class="chev" aria-hidden="true">↓</span>
+          </summary>
+          <div class="a">
+            <p>The academy is a separate operation, but lodge guests get discounted lesson and hire rates. We can package accommodation and surf sessions together for groups. Say so when you enquire and we&rsquo;ll quote the combined price.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="ix">05</span>
+            <span class="q">Where is Elemental Surf Lodge?</span>
+            <span class="chev" aria-hidden="true">↓</span>
+          </summary>
+          <div class="a">
+            <p>61 to 63 Tower Road, Newquay, TR7 1LX. Between Towan and Fistral, a ten minute walk to world famous Fistral Beach and a short walk into town.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="ix">06</span>
+            <span class="q">Do you cater for the group?</span>
+            <span class="chev" aria-hidden="true">↓</span>
+          </summary>
+          <div class="a">
+            <p>For school and retreat groups, yes. Full board with hot breakfasts, packed lunches and proper evening meals served in the dining room. Stag, hen and private groups usually self cater or eat out in town. Either way, the kitchen and dining room are yours to use.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA BAND ============================ -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content: center;">Ready to book <span class="dot"></span> Group enquiries</div>
+      <h2>Plan it with <span class="accent">us</span>.</h2>
+      <p class="sub">
+        Drop the friendly team a line with your group size and rough dates. We&rsquo;ll come back with a price, a room plan and a quiet but confident promise that we&rsquo;ll look after you.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="https://elementalsurflodge.com/contact/">Make a group enquiry <span aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="tel:+441637808800">Call +44 1637 808 800</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ BOOKING CTA ============================ -->
+  <section class="booking" id="book">
+    <div class="wrap">
+      <div class="booking-cta">
+        <div class="eyebrow on-light">Or book direct <span class="dot"></span> Best rate</div>
+        <h2>Ready when you are.</h2>
+        <p>
+          For smaller groups and individual rooms, you can check availability and book directly through our reservation system. Larger groups should drop us a line first. It&rsquo;s quicker.
+        </p>
+        <a class="btn btn--solid" href="https://hotels.cloudbeds.com/en/reservation/tXY35C" target="_blank" rel="noopener">Check &amp; book →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
