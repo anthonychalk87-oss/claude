@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elemental-ness &#183; Elemental Surf Lodge, Newquay</title>
+
+<!--
+  Elemental Surf Lodge. Elemental-ness page.
+  Hard HTML for a Beaver Builder HTML module. Copy from the <link> tags down to the closing </div>.
+  Scoped to .esl-eness. House style v1 &#183; 2026.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700;900&display=swap" />
+
+<style>
+:root {
+  --navy: #0f172a; --navy-2: #1e293b; --navy-3: #111a2e;
+  --amber: #eab308; --yellow: #facc15; --olive: #b5c468;
+  --warm-grey: #f4f3f1; --charcoal: #353b40; --white: #ffffff;
+  --border: rgba(15,23,42,0.08); --border-dark: rgba(255,255,255,0.10);
+  --accent: var(--amber);
+  --cta-radius: 9999px; --cta-padding: 13px 26px; --cta-border-width: 2px;
+}
+
+/* BASE */
+.esl-eness *, .esl-eness *::before, .esl-eness *::after { box-sizing: border-box; }
+.esl-eness { font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--charcoal); line-height: 1.6; background: var(--warm-grey); -webkit-font-smoothing: antialiased; }
+.esl-eness img { max-width: 100%; display: block; }
+.esl-eness a { color: inherit; text-decoration: none; }
+.esl-eness p { margin: 0 0 1em; }
+.esl-eness h1, .esl-eness h2, .esl-eness h3, .esl-eness h4 { font-weight: 900; letter-spacing: -0.01em; line-height: 1.05; margin: 0; color: var(--navy); }
+.esl-eness h1 { font-size: clamp(40px, 6.4vw, 88px); text-transform: uppercase; }
+.esl-eness h2 { font-size: clamp(34px, 5.2vw, 72px); text-transform: uppercase; }
+.esl-eness h3 { font-size: 22px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.esl-eness h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+.esl-eness .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.esl-eness section { padding: 96px 0; }
+.esl-eness .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 10px; }
+.esl-eness .eyebrow .dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.esl-eness .lede { font-size: 17px; line-height: 1.7; max-width: 64ch; font-weight: 300; }
+.esl-eness .section-head { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start; margin-bottom: 56px; }
+.esl-eness .section-head h2 { margin-top: 14px; }
+.esl-eness .section-head .lede { margin-top: 18px; }
+.esl-eness .section-head .meta { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); opacity: 0.55; text-align: right; }
+
+/* BUTTONS */
+.esl-eness .btn { display: inline-flex; align-items: center; gap: 10px; font: 700 12px/1 'Montserrat', sans-serif; letter-spacing: 0.15em; text-transform: uppercase; padding: var(--cta-padding); border-radius: var(--cta-radius); background: transparent; color: var(--accent); border: var(--cta-border-width) solid var(--accent); cursor: pointer; transition: .15s ease; white-space: nowrap; }
+.esl-eness .btn:hover { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+.esl-eness .btn--ghost { color: rgba(255,255,255,0.92); border-color: rgba(255,255,255,0.45); }
+.esl-eness .btn--ghost:hover { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+.esl-eness .btn--solid { background: var(--amber); color: var(--navy); }
+.esl-eness .btn--solid:hover { background: var(--yellow); border-color: var(--yellow); }
+
+/* HERO */
+.esl-eness .hero { background: var(--navy); color: var(--white); padding: 120px 0 0; border-bottom: 4px solid var(--accent); }
+.esl-eness .hero h1 { color: var(--white); }
+.esl-eness .hero h1 .accent { color: var(--accent); }
+.esl-eness .hero .sub { font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.78); max-width: 52ch; margin: 24px 0 36px; font-weight: 300; }
+.esl-eness .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.esl-eness .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: end; padding-bottom: 80px; }
+.esl-eness .hero-art { background: linear-gradient(180deg, #1e293b 0%, #0b1224 100%); border: 0.5px solid var(--border-dark); border-radius: 14px; padding: 26px; position: relative; aspect-ratio: 4 / 5; }
+.esl-eness .hero-art .corner-tag { position: absolute; top: 22px; left: 22px; z-index: 3; background: var(--accent); color: var(--navy); padding: 8px 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.esl-eness .hero-art .anniversary { position: absolute; top: -32px; right: -32px; z-index: 3; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; transform: rotate(-9deg); background: var(--white); box-shadow: 0 12px 28px rgba(0,0,0,0.45); }
+.esl-eness .hero-art .anniversary img { width: 100%; height: 100%; object-fit: cover; }
+.esl-eness .hero-art .hero-photo { object-fit: cover; border-radius: 8px; position: absolute; inset: 26px; width: calc(100% - 52px); height: calc(100% - 52px); }
+
+/* MARQUEE */
+.esl-eness .hero-marquee { border-top: 1px solid var(--border-dark); border-bottom: 4px solid var(--accent); background: var(--navy-3); overflow: hidden; white-space: nowrap; }
+.esl-eness .hero-marquee .track { display: inline-flex; gap: 56px; padding: 22px 0; animation: esl-eness-marquee 38s linear infinite; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+.esl-eness .hero-marquee .track span { display: inline-flex; align-items: center; gap: 56px; padding-right: 56px; }
+.esl-eness .hero-marquee .track i { display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; font-style: normal; }
+@keyframes esl-eness-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* INTRO */
+.esl-eness .intro { background: var(--white); }
+.esl-eness .intro-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start; }
+.esl-eness .intro-grid p { font-size: 16px; line-height: 1.75; color: var(--charcoal); }
+.esl-eness .intro-grid p.lead { font-size: 18px; font-weight: 300; color: var(--navy); }
+.esl-eness .intro-side { background: var(--warm-grey); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 32px; }
+.esl-eness .intro-side h4 { margin-bottom: 18px; }
+.esl-eness .intro-side ul { list-style: none; padding: 0; margin: 0; }
+.esl-eness .intro-side li { font-size: 13px; padding: 12px 0; border-bottom: 1px dashed var(--border); display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; }
+.esl-eness .intro-side li:last-child { border-bottom: none; }
+.esl-eness .intro-side li .k { color: var(--charcoal); font-weight: 300; }
+.esl-eness .intro-side li .v { font-family: ui-monospace, monospace; font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* VALUE CARDS (2-up, image top) */
+.esl-eness .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.esl-eness .v-card { background: var(--white); border: 1px solid var(--border); transition: .2s ease; display: flex; flex-direction: column; }
+.esl-eness .v-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.esl-eness .v-card .v-photo { aspect-ratio: 3 / 2; overflow: hidden; background: var(--navy-2); }
+.esl-eness .v-card .v-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.esl-eness .v-card:hover .v-photo img { transform: scale(1.03); }
+.esl-eness .v-card .v-body { padding: 32px; display: flex; flex-direction: column; flex: 1; }
+.esl-eness .v-card .ix { font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
+.esl-eness .v-card h3 { color: var(--navy); margin-bottom: 14px; }
+.esl-eness .v-card p { font-size: 14px; line-height: 1.7; color: rgba(53,59,64,0.85); }
+.esl-eness .v-card .takeaway { margin: auto 0 0; padding-top: 18px; border-top: 1px dashed var(--border); font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.5; }
+
+/* IN ACTION (dark) */
+.esl-eness .action { background: var(--navy); color: var(--white); }
+.esl-eness .action h2 { color: var(--white); }
+.esl-eness .action .lede { color: rgba(255,255,255,0.78); }
+.esl-eness .action .section-head .meta { color: rgba(255,255,255,0.5); opacity: 1; }
+.esl-eness .action-photo { position: relative; overflow: hidden; border: 0.5px solid var(--border-dark); border-radius: 14px; }
+.esl-eness .action-photo img { width: 100%; height: auto; aspect-ratio: 16 / 7; object-fit: cover; }
+.esl-eness .action-photo .caption { position: absolute; left: 22px; bottom: 22px; padding-left: 12px; border-left: 2px solid var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); line-height: 1.4; }
+.esl-eness .action-photo .caption small { display: block; font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.65); letter-spacing: 0.22em; margin-top: 4px; }
+.esl-eness .quote-box { margin-top: 24px; background: var(--navy-3); border: 0.5px solid var(--border-dark); border-left: 4px solid var(--accent); padding: 40px 44px; }
+.esl-eness .quote-box blockquote { margin: 0; font-size: 19px; line-height: 1.7; font-weight: 300; color: rgba(255,255,255,0.92); max-width: 72ch; }
+.esl-eness .quote-box cite { display: block; margin-top: 22px; font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+
+/* OFFER CARDS (3-up) */
+.esl-eness .offer { background: var(--white); }
+.esl-eness .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.esl-eness .e-card { background: var(--white); border: 1px solid var(--border); padding: 32px; transition: .2s ease; display: flex; flex-direction: column; }
+.esl-eness .e-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.esl-eness .e-card .ix { font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
+.esl-eness .e-card h3 { color: var(--navy); margin-bottom: 14px; }
+.esl-eness .e-card p { font-size: 14px; line-height: 1.65; color: rgba(53,59,64,0.85); flex: 1; }
+.esl-eness .e-card .card-link { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); align-self: flex-start; }
+.esl-eness .e-card .card-link:hover { color: var(--yellow); }
+.esl-eness .e-card.feature { background: var(--navy); border-color: var(--navy); justify-content: center; }
+.esl-eness .e-card.feature h3 { color: var(--white); }
+.esl-eness .e-card.feature p { color: rgba(255,255,255,0.72); }
+
+/* BEYOND CARDS (image top) */
+.esl-eness .beyond { background: var(--warm-grey); }
+.esl-eness .b-card { padding: 0; }
+.esl-eness .b-card .b-photo { aspect-ratio: 3 / 2; overflow: hidden; background: var(--navy-2); }
+.esl-eness .b-card .b-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.esl-eness .b-card:hover .b-photo img { transform: scale(1.03); }
+.esl-eness .b-card .b-body { padding: 28px 32px 32px; display: flex; flex-direction: column; flex: 1; }
+
+/* CTA BAND */
+.esl-eness .cta-band { background: var(--navy-3); color: var(--white); border-top: 4px solid var(--accent); border-bottom: 4px solid var(--accent); padding: 96px 0; text-align: center; }
+.esl-eness .cta-band h2 { color: var(--white); max-width: 22ch; margin: 14px auto 20px; }
+.esl-eness .cta-band h2 .accent { color: var(--accent); }
+.esl-eness .cta-band .sub { color: rgba(255,255,255,0.72); font-size: 16px; max-width: 56ch; margin: 0 auto 36px; line-height: 1.7; }
+.esl-eness .cta-band .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .esl-eness section { padding: 72px 0; }
+  .esl-eness .hero { padding-top: 88px; }
+  .esl-eness .hero-grid { grid-template-columns: 1fr; gap: 80px; padding-bottom: 64px; }
+  .esl-eness .hero-art { max-width: 480px; aspect-ratio: 1 / 1.1; }
+  .esl-eness .section-head { grid-template-columns: 1fr; }
+  .esl-eness .section-head .meta { text-align: left; }
+  .esl-eness .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .esl-eness .value-grid { grid-template-columns: 1fr; }
+  .esl-eness .card-grid { grid-template-columns: 1fr 1fr; }
+  .esl-eness .action-photo img { aspect-ratio: 16 / 10; }
+  .esl-eness .quote-box { padding: 32px; }
+}
+@media (max-width: 560px) {
+  .esl-eness .wrap { padding: 0 20px; }
+  .esl-eness .hero { padding-top: 64px; }
+  .esl-eness .hero-grid { gap: 60px; }
+  .esl-eness .hero-art .anniversary { width: 110px; height: 110px; top: -20px; right: -10px; }
+  .esl-eness .card-grid { grid-template-columns: 1fr; }
+  .esl-eness .quote-box blockquote { font-size: 17px; }
+  .esl-eness .hero-marquee .track { font-size: 12px; letter-spacing: 0.22em; }
+}
+</style>
+</head>
+
+<body>
+<div class="esl-eness">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Who we are <span class="dot"></span> Since 2006</div>
+          <h1 style="margin-top: 22px;">Elemental<span class="accent"><br>-ness</span></h1>
+          <p class="sub">
+            Every company says it has values. Ours have a name. Elemental-ness is the way we&rsquo;ve done things since 2006, and it&rsquo;s the reason people come back.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn--solid" href="https://elemental.sailia.co.uk/" target="_blank" rel="noopener">Book your session <span aria-hidden="true">&#8594;</span></a>
+            <a class="btn btn--ghost" href="#offer">What we offer</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="corner-tag">Since 2006 &#183; Elemental UK</div>
+          <div class="anniversary" aria-label="20 years of Elemental UK">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2026/03/20th-Anniversary-logo.png" alt="20 Years of Elemental UK, 2006 to 2026" />
+          </div>
+          <img class="hero-photo" src="https://elementaluk.com/wp-content/smush-webp/2025/07/about-imgbox.jpg.webp" alt="Elemental on the water in Cornwall" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="track">
+        <span>Safety <i></i> Fun <i></i> Learning <i></i> Sweat the small stuff <i></i> The client is king <i></i> Respect 360 <i></i></span>
+        <span>Safety <i></i> Fun <i></i> Learning <i></i> Sweat the small stuff <i></i> The client is king <i></i> Respect 360 <i></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 / The idea <span class="dot"></span> What makes Elemental unique</div>
+          <h2>A distinct way<br>of doing things</h2>
+        </div>
+        <div class="meta">Established 2006 &#183; 20 years</div>
+      </div>
+
+      <div class="intro-grid">
+        <div>
+          <p class="lead">
+            We have a distinct approach to life at Elemental. We call it Elemental-ness. It sets us apart in everything we do and it influences every decision we make.
+          </p>
+          <p>
+            It&rsquo;s more than a mindset. It&rsquo;s a commitment to getting things right at every turn, for every guest, every session, every day of the season.
+          </p>
+          <p>
+            Four core values sit at its heart. They&rsquo;re not framed on an office wall. They&rsquo;re the standards we hold ourselves to every single day. They shape our interactions, guide our decisions and form the foundation of every experience we deliver.
+          </p>
+        </div>
+        <aside class="intro-side">
+          <h4>The four values</h4>
+          <ul>
+            <li><span class="k">Safety, fun and learning</span><span class="v">01</span></li>
+            <li><span class="k">Sweat the small stuff</span><span class="v">02</span></li>
+            <li><span class="k">The client is king</span><span class="v">03</span></li>
+            <li><span class="k">Respect 360</span><span class="v">04</span></li>
+            <li><span class="k">Practised daily since</span><span class="v">2006</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FOUR VALUES -->
+  <section style="background: var(--warm-grey);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">02 / The values <span class="dot"></span> Four of them, held daily</div>
+          <h2>At its heart,<br>four core values</h2>
+          <p class="lede">
+            The defining principles behind every session we run and every bed we make. Here they are, in full.
+          </p>
+        </div>
+        <div class="meta">No. 1 to 4 &#183; In order</div>
+      </div>
+
+      <div class="value-grid">
+
+        <article class="v-card">
+          <div class="v-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/IMG_5284-scaled-e1737801524467.jpg" alt="Surf coaching session, safety, fun and learning" />
+          </div>
+          <div class="v-body">
+            <div class="ix">01 / The foundation</div>
+            <h3>Safety, fun and learning</h3>
+            <p>Safety is the foundation of every great experience. It&rsquo;s what lets everyone engage fully, explore and enjoy their time with us.</p>
+            <p>But safety alone isn&rsquo;t enough. We weave in plenty of fun, moments of joy, laughter and connection. And because we never miss a chance to inspire growth, every experience teaches something new and builds confidence.</p>
+            <p class="takeaway">When safety, fun and learning come together, the result is unforgettable.</p>
+          </div>
+        </article>
+
+        <article class="v-card">
+          <div class="v-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/4J8A8898-1536x1024.jpg" alt="Attention to detail at the lodge" />
+          </div>
+          <div class="v-body">
+            <div class="ix">02 / The detail</div>
+            <h3>Sweat the small stuff</h3>
+            <p>The smallest things often make the biggest difference, so we&rsquo;re obsessed with precision and care.</p>
+            <p>We aim for perfection, anticipating needs before they arise and solving problems before they occur.</p>
+            <p class="takeaway">Relentless attention to detail makes experiences seamless, and marks us out as a team that truly cares.</p>
+          </div>
+        </article>
+
+        <article class="v-card">
+          <div class="v-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/ElemSwanpool18-132-1536x965.jpg" alt="Working with clients at Swanpool" />
+          </div>
+          <div class="v-body">
+            <div class="ix">03 / The people</div>
+            <h3>The client is king</h3>
+            <p>Our clients are at the centre of everything we do.</p>
+            <p>Customising experiences, responding to special requests, going the extra mile so everyone feels valued and understood. We don&rsquo;t just provide services. We build partnerships based on trust and a shared vision for success.</p>
+            <p class="takeaway">At Elemental, you&rsquo;re not just a client. You&rsquo;re royalty.</p>
+          </div>
+        </article>
+
+        <article class="v-card">
+          <div class="v-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/IMG_3804-1536x1024.jpg" alt="Respect for the coast, the community and each other" />
+          </div>
+          <div class="v-body">
+            <div class="ix">04 / The bigger picture</div>
+            <h3>Respect 360</h3>
+            <p>Respect is the cornerstone of our culture. We treat everyone, clients, colleagues and partners, with kindness, fairness and understanding.</p>
+            <p>And it doesn&rsquo;t stop with people. It extends to the environment, the community and the resources we use.</p>
+            <p class="takeaway">Respect 360 means seeing the bigger picture and acting with integrity, gratitude and care.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INSPIRATION -->
+  <section style="background: var(--white);">
+    <div class="wrap">
+      <div class="intro-grid" style="grid-template-columns: 1fr 1fr; align-items: stretch; gap: 56px;">
+        <div>
+          <div class="eyebrow">03 / The inspiration <span class="dot"></span> Where it all comes from</div>
+          <h2 style="margin: 14px 0 32px;">What is our<br>inspiration?</h2>
+          <p class="lead">
+            Elemental is the brainchild of Dany Duncan, who has more than 40 years&rsquo; experience working in outdoor pursuits in the UK and overseas.
+          </p>
+          <p>
+            He started out running watersports centres and children&rsquo;s activity holidays every summer, then teaching skiing every winter. That included coaching paralympic skiers and competing in ski mountaineering. In 2006 he set up Elemental UK, a company devoted to adventurous activities in the mountains and on the water.
+          </p>
+          <p>
+            The first base was Swanpool Beach in Falmouth, a naturally sheltered bay that&rsquo;s perfect for kayaking and sailing. Beach centres in Newquay followed in 2011, and in 2022 came the first hotel, Elemental Surf Lodge, with an on site surf school for the waves at world famous Fistral. Winters still see Dany and the team heading to the Alps, running ski trips to France, Italy, Switzerland, Austria and beyond.
+          </p>
+          <p style="margin-bottom: 0;">
+            Twenty years on, Elemental has an established band of highly qualified, DBS checked staff, and has welcomed thousands of people to the beach and the mountains, whatever their age and skill level, nurturing talent and building confidence.
+          </p>
+        </div>
+        <aside>
+          <div style="border: 1px solid var(--border); overflow: hidden; height: 100%;">
+            <img src="https://elementaluk.com/wp-content/smush-webp/2025/09/new-danny-img.jpg.webp" alt="Dany Duncan on the water" style="width: 100%; height: 100%; min-height: 460px; object-fit: cover; display: block;" />
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN ACTION -->
+  <section class="action">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">04 / In action <span class="dot"></span> Not just words</div>
+          <h2>Elemental-ness<br>in action</h2>
+          <p class="lede">
+            These values aren&rsquo;t a poster in reception. They&rsquo;re the principles that guide us every step of the way. This is Elemental-ness. This is who we are.
+          </p>
+        </div>
+        <div class="meta" style="display: flex; flex-direction: column; align-items: flex-end; gap: 22px;">
+          <span>Newquay &#183; Cornwall</span>
+          <img src="https://elementalsurflodge.com/wp-content/themes/elemental-surf-lodge-custom/assets/images/Surf%20Academy%20logo.svg" alt="Elemental Surf Academy" style="width: 210px; max-width: 80%; height: auto; align-self: center;" />
+        </div>
+      </div>
+
+      <div class="action-photo">
+        <img src="https://elementalsurflodge.com/wp-content/uploads/2024/07/4J8A9011-1536x1024.jpg" alt="Kids bodyboarding in the ocean with Elemental" />
+        <div class="caption">In the water<small>Where the values live</small></div>
+      </div>
+
+      <div class="quote-box">
+        <blockquote>
+          &ldquo;Whether it&rsquo;s customising experiences or going the extra mile to make everyone feel valued and understood. We don&rsquo;t just provide services, we build partnerships based on trust and a shared vision for success.&rdquo;
+        </blockquote>
+        <cite>Dany Duncan &#183; Managing Director</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section class="offer" id="offer">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">05 / What we offer <span class="dot"></span> See it for yourself</div>
+          <h2>The best way to get it<br>is to experience it</h2>
+          <p class="lede">
+            Elemental-ness runs through every programme we offer in Newquay. Pick a starting point.
+          </p>
+        </div>
+        <div class="meta">Newquay programmes &#183; All year</div>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="e-card">
+          <div class="ix">01 / Stay</div>
+          <h3>Accommodation</h3>
+          <p>Rooms at the lodge, between Towan and Fistral. Honest beds, shared spaces and the academy next door.</p>
+          <a class="card-link" href="https://elementalsurflodge.com/accommodation/">Find out more &#8594;</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">02 / Surf</div>
+          <h3>Surf lessons</h3>
+          <p>Tailored coaching for every skill level, from first waves to fine tuning, run by the Elemental Surf Academy.</p>
+          <a class="card-link" href="https://elementalsurflodge.com/surf-lessons/">Find out more &#8594;</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">03 / Kit</div>
+          <h3>Equipment hire</h3>
+          <p>Quality boards and winter ready wetsuits, looked after the way we look after everything else.</p>
+          <a class="card-link" href="https://elementalsurflodge.com/surf-equipment/">Find out more &#8594;</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">04 / Kids</div>
+          <h3>Kids Club</h3>
+          <p>Fun and safe holiday adventure programmes. Safety, fun and learning, purpose built for the youngest surfers.</p>
+          <a class="card-link" href="https://elementalsurflodge.com/kids-club/">Find out more &#8594;</a>
+        </article>
+
+        <article class="e-card">
+          <div class="ix">05 / Community</div>
+          <h3>Time 2 Move</h3>
+          <p>Funded activity and healthy meal initiatives for local families. Respect 360, in practice.</p>
+          <a class="card-link" href="https://elementalsurflodge.com/time-2-move/">Find out more &#8594;</a>
+        </article>
+
+        <article class="e-card feature">
+          <div class="ix">Ready when you are</div>
+          <h3>Book your session.</h3>
+          <p>Lessons, hire and programmes, all bookable online through our sessions system.</p>
+          <a class="btn btn--ghost" style="margin-top: 18px; align-self: flex-start;" href="https://elemental.sailia.co.uk/" target="_blank" rel="noopener">Book your session &#8594;</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND -->
+  <section class="beyond">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">06 / Beyond Newquay <span class="dot"></span> The Elemental family</div>
+          <h2>Beyond surfing<br>and staying</h2>
+          <p class="lede">
+            The lodge is one part of Elemental UK. The same values run through everything else we do for schools and groups, beyond the waves of Newquay.
+          </p>
+        </div>
+        <div class="meta">elementaluk.com</div>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="e-card b-card">
+          <div class="b-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/coasteering.jpg" alt="Coasteering at Swanpool Activity Centre" />
+          </div>
+          <div class="b-body">
+            <div class="ix">01 / Falmouth</div>
+            <h3>Swanpool Activity Centre</h3>
+            <p>Coasteering, kayaking and beach days on Falmouth&rsquo;s sheltered south coast.</p>
+            <a class="card-link" href="https://elementaluk.com/beach-activities/" target="_blank" rel="noopener">Find out more &#8594;</a>
+          </div>
+        </article>
+
+        <article class="e-card b-card">
+          <div class="b-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/Ski.jpg" alt="Elemental Ski school trips" />
+          </div>
+          <div class="b-body">
+            <div class="ix">02 / Winter</div>
+            <h3>Elemental Ski</h3>
+            <p>School ski trips run with the same care we bring to the surf.</p>
+            <a class="card-link" href="https://elementaluk.com/winter-ski-trips/" target="_blank" rel="noopener">Find out more &#8594;</a>
+          </div>
+        </article>
+
+        <article class="e-card b-card">
+          <div class="b-photo">
+            <img src="https://elementalsurflodge.com/wp-content/uploads/2025/01/french-adventure.jpeg" alt="French summer adventure residential" />
+          </div>
+          <div class="b-body">
+            <div class="ix">03 / Summer</div>
+            <h3>French Adventure</h3>
+            <p>A summer residential across the Channel, for schools that want to go further.</p>
+            <a class="card-link" href="https://elementaluk.com/french-summer-adventure" target="_blank" rel="noopener">Find out more &#8594;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content: center;">Twenty years in <span class="dot"></span> Come and see</div>
+      <h2>Come and feel<br>the <span class="accent">difference</span></h2>
+      <p class="sub">
+        The values are on this page. The proof is at the lodge. Book a session, plan a stay, or just come and say hello.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn--solid" href="https://elemental.sailia.co.uk/" target="_blank" rel="noopener">Book your session <span aria-hidden="true">&#8594;</span></a>
+        <a class="btn btn--ghost" href="https://elementalsurflodge.com/accommodation/">Plan a stay</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
